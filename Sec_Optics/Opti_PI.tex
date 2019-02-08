@@ -1,0 +1,502 @@
+\FloatBarrier
+\subsection{Parametric instability}
+%\emph{Author: \textbf{Kazuhiro Yamamoto, Daniel Heinert, Sergey E. Strigin}\\}
+\label{sec:opt_layout_PI}
+
+Parametric instability is one of the important issues in future
+interferometric detectors \cite{Braginsky2001}. Such interferometers
+have at least a few km length arm cavities. The spectral distance between 
+optical modes in these long cavities are on the order of 10 kHz.
+This value is comparable with the frequencies of elastic modes of
+the cavity mirrors. In such cases, the parametric instability
+becomes a serious problem in the stable operation of
+interferometers. A small thermally driven elastic vibration
+modulates the light and excites the transverse optical modes of the
+cavity which is called Stokes modes. These excited optical modes apply modulated radiation
+pressure on the mirrors. This makes the amplitude of the elastic
+modes larger. At last, the elastic modes and optical Stokes modes which is 
+different from injected beam oscillate largely. This is the parametric instability.
+
+The formula of the parametric instability of a Fabry-Perot cavity
+(without anti-Stokes modes) is derived in Ref. \cite{Braginsky2001}.
+If the parametric gain $R$ of an elastic mode is larger than unity, that
+mode is unstable. The formula of $R$ is
+\begin{equation}
+R = \sum_{\rm optical\ mode} \frac{4PQ_{\rm m}Q_{\rm
+o}}{McL{\omega_{\rm m}}^2} \frac{\Lambda_{\rm o}}{1+\Delta
+\omega^2/{\delta_{\rm o}}^2}, \label{R}
+\end{equation}
+where $P,Q_{\rm m},Q_{\rm o},M,c,L,\omega_{\rm m},\Delta\omega$,
+and $\delta_{\rm o}$ are the optical power in the cavity, the
+Q-values of the elastic and optical modes, the mass of the mirror,
+the speed of light, the cavity length, the angular frequency of
+the elastic mode, the angular frequency difference between the
+elastic and optical modes, and the half-width angular frequency of
+the optical mode, respectively. The value $\Lambda_{\rm o}$
+represents the spatial overlap between the optical and elastic
+modes. If the shapes of the optical and elastic modes are similar,
+$\Lambda_{\rm o}$ is on the order of unity. If the shapes are not
+similar, $\Lambda_{\rm o}$ is almost zero. When the shapes and
+frequencies of the optical and elastic modes are similar
+($\Lambda_{\rm o} \sim 1, \Delta \omega \sim 0$), $R$ will become
+several thousands in second generation projects; Advanced LIGO and 
+Advanced Virgo. In these projects, the effect of parametric
+instability is a serious problem \cite{Ju2006a,Ju2006b}. 
+
+Here, the parametric instability of the Einstein Telescope
+(ET) interferometer is discussed. This instability depends on the
+specification of the interferometer. However, details of
+the design are considered and discussed now. Therefore, outlines of
+the instability of the ET interferometer, preliminary calculation results, 
+and future work are shown. In
+order to simplify the discussion, only the instability of a
+Fabry-Perot cavity is considered. The effect of power and signal
+recycling (or resonant sideband extraction) techniques are not taken into
+account.
+
+At first, we consider the parametric instabilities in Advanced LIGO
+as an example of the second generation.
+%In order to calculate $\omega_{\rm
+%m}$ and $\Lambda_{\rm o}$ for the instability evaluation, we used
+%ANSYS, which is a software application for a finite-element
+%method.
+At second, the parametric instability in ET is
+discussed (outline of instability in ET and the preliminary results of calculation 
+are shown). At third, how to suppress the instability of the ET
+arm cavity is considered. The last part is devoted to a
+summary (and future work).
+
+\textbf{Parametric instability of the second generation interferometers}
+\nopagebreak
+
+As example of the second generation interferometers, the Advanced LIGO is considered. The specifications of 
+Advanced Virgo are similar. Table \ref{tab:specification2} gives the specifications of Advanced
+LIGO in Refs. \cite{Ju2006a,Ju2006b,Zhao2005} (after these references, the
+specifications of Advanced LIGO were changed). 
+  
+Study of the instability in Advanced LIGO by a group at the
+University of Western Australia \cite{Ju2006a,Ju2006b} is reviewed
+briefly. They investigated what happens when the curvature of a
+mirror is changed. The curvature of the other mirror is the
+default value given in Table \ref{tab:specification2}. Reference
+\cite{Ju2006b} shows the curvature dependence of the unstable mode
+number. 
+The number of the unstable modes of mirror cavity is between 20 and 60 
+(it must be noted that this number increases if the higher elastic modes are taken into account). 
+Reference \cite{Ju2006a} shows that the
+maximum of $R$ in the various elastic modes strongly depends on
+the mirror curvature. Even a shift of only a few meters in the
+mirror curvature causes a drastic change of the maximum $R$. The
+requirement of the accuracy in the mirror curvature in Advanced
+LIGO is difficult to be achieved.
+
+\textbf{Parametric instability of Einstein Telescope: Specifications of Einstein Telescope}
+\nopagebreak
+
+Here, the parametric instability of the ET is
+considered. The details of the ET interferometer are not decided
+now. Here, we adopt parameters of ET-C \cite{Hild2010a}. 
+These parameters are summarized in Table
+\ref{tab:specification2}. Parameters of ET-D \cite{Hild2010b} (this is newer than ET-C) 
+are similar to those of ET-C. 
+The difference does not change the paremetric instability. The comparison with old sensitivity,
+ET-B \cite{HildETconventional,Yamamoto2009}, is also discussed here.  
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{llll}
+\hline
+\hline
+ &Advanced LIGO&ET-C-HF&ET-C-LF\\
+\hline
+Laser beam profile&Gaussian&LG33&Gaussian\\
+Wavelength($\lambda$)&1064 nm&1064 nm&1550 nm\\
+Cavity length($L$)&4000 m&10000 m&10000 m\\
+Front mirror curvature radius($R_1$)&2076 m&5643 m&6109 m\\
+End mirror curvature radius($R_2$)&2076 m&5643 m&6109 m\\
+Beam radius at the mirrors($w_{\rm i}$)&60 mm&72.5 mm&120 mm\\
+Finesse (${\cal F}$) & 1250 & 850 & 850 \\
+Power in a cavity($P$) &0.83 MW&3 MW&18 kW\\
+Mirror material&Fused silica&Fused silica&Silicon\\
+Sound velocity in mirror ($v$) &5.7 km/s&5.7 km/s&8.4 km/s\\
+Density of mirror ($\rho$) &2.2 g/cm$^3$&2.2 g/cm$^3$&2.3 g/cm$^3$\\
+Mirror mass($M$)&40 kg&200 kg& 211 kg \\
+Mirror diameter($r$)&340 mm&620 mm&620 mm\\
+Mirror thickness($t$)&200 mm&300 mm&300 mm\\
+Mirror temperature($T$)&300 K&300 K&10 K\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\caption{Specification of Advanced LIGO
+\cite{Ju2006a,Ju2006b,Zhao2005}, and ET-C
+\cite{Hild2010a}.\label{tab:specification2}}
+\end{table}
+
+%Hild did not show the curvatures of mirrors. The curvature in Table
+%\ref{tab:specification2} was derived from his parameters, cavity
+%length and beam radii at mirrors. It is supposed that the
+%curvature of front and end mirrors is the same. The beam radius
+%$w_{\rm i}$ at mirror is described as
+%\begin{eqnarray}
+%{w_{\rm i}}^2 &=& \frac{L \lambda}{\pi |g_{\rm i}|}\sqrt{\frac{g_1 g_2}{1- g_1 g_2}}, \\
+%g_{\rm i} &=& 1- \frac{L}{R_{\rm i}}.
+%\end{eqnarray}
+%Since $w_{\rm i}$ is 12 cm and $L$ is 10 km, the curvature of the
+%mirrors is 5070 m.
+
+%Hild supposed that the mass of a mirror $M$ is 120 kg. It implies
+%that the aspect ratio (the ratio of the mirror thickness to
+%diameter) is smaller than those of usual interferometric
+%gravitational wave detectors because of the large beam radius (12
+%cm). However, in order to simplify the discussion, it is assumed
+%that the aspect ratio is the same as usual one (0.6 in LCGT). The
+%mirror radius must be at least 2.5 times larger than the beam
+%radius because the diffraction loss must be enough small
+%\footnote{In this case, the diffraction loss is 3.7 ppm.}. Thus,
+%the mirror radius of ET is 30 cm. The mirror radius of LCGT is
+%12.5 cm. The volume of a mirror of ET is $(30/12.5)^3=2.4^3=14$
+%times larger than that of LCGT. The mirror mass of LCGT is about
+%30 kg. If the ET mirrors are made from sapphire as like LCGT, the
+%mirror mass of ET is 410 kg. If the ET mirrors are made from
+%silicon (densities of silicon and sapphire are 2.3 g/cm$^3$ and 4
+%g/cm$^3$), the mirror mass is 230 kg.
+
+\textbf{Parametric instability of Einstein Telescope: Maximum of R of Einstein Telescope}
+\nopagebreak
+
+The strength of instability $R$ is written as
+\begin{equation}
+R \propto \frac{4PQ_{\rm m}Q_{\rm o}}{McL{\omega_{\rm m}}^2}.\label{Rmax}
+\end{equation}
+Let us compare the maximum $R$ of ET
+with that of Advanced LIGO. It is supposed that $Q_{\rm m}$ is the same. 
+We must take the difference of power $P$ and mass $M$ into account. 
+It must be noted that the ratio $Q_{\rm o}/L$ is proportional to the factor ${\cal F}/\lambda$.
+The resonant frequency 
+$\omega_{\rm m}$ is inversely propotional to the mirror size. 
+It is assumed that scale of mirror is propotional to the third root of 
+mirror volume (ratio of mass to density). 
+We should consider the material difference in the case of ET-LF. 
+The resonant frequency of mirror $\omega_{\rm m}$ is inversely propotional to the sound velocity.
+
+The ratio of $R$ of ET-HF to that of Advanced LIGO is 
+\begin{equation}
+\left(\frac{3 {\rm MW}}{0.83 {\rm MW}}\right)\left(\frac{850}{1250}\right) \left(\frac{40 {\rm kg}}{200 {\rm kg}}\right) \left(\frac{200 {\rm kg}}{40 {\rm kg}}\right)^{2/3}=1.4.
+\end{equation}
+The ratio of $R$ of ET-LF to that of Advanced LIGO is 
+\begin{equation}
+\left(\frac{18 {\rm kW}}{0.83 {\rm MW}}\right)\left(\frac{850}{1250}\frac{1064~{\rm nm}}{1550~{\rm nm}}\right) \left(\frac{40 {\rm kg}}{211 {\rm kg}}\right) \left(\frac{211 {\rm kg}}{40 {\rm kg}}\frac{2.2 {\rm g/cm}^2}{2.3 {\rm g/cm}^3}\right)^{2/3} \left(\frac{5.7 {\rm km/s}}{8.4 {\rm km/s}}\right)^2=2.6\times10^{-3}. 
+\end{equation}
+The maximum of $R$ in Advanced LIGO is on the order of 100 \cite{Ju2006b}. Therefore, the parametric instability of ET-LF 
+is not a problem. On the other hand, maximum $R$ of ET-HF is comparable with that of Advanced LIGO. We will discuss 
+parametric instability of only ET-HF.
+
+\textbf{Parametric instability of Einstein Telescope: Number of unstable modes of ET-C-HF}
+\nopagebreak
+
+The number of unstable modes are proportional to the product of elastic mode density and 
+optical mode density.
+The mode density of the elastic mode is proportional to the cubic
+of the ratio of the mirror size to the sound velocity. Thus, 
+the elastic mode density of ET-HF is 5 times larger than that of Advanced LIGO because
+of the difference of mirror size. 
+
+The ratio of the optical transverse mode interval to the free spectrum range is
+described as
+\begin{eqnarray}
+&&\frac1{\pi}\cos^{-1}\sqrt{g_1 g_2},\\
+&&g_n = 1-\frac{L}{R_n}.
+\end{eqnarray}
+There are 8 and 4 transverse optical modes in a free spectrum
+range of Advanced LIGO and ET-HF interferometers. Since the cavity of ET is 2.5
+times longer, the free spectrum range is 2.5 times smaller.
+Therefore, the optical mode density of the ET-HF interferometer is 1.4 times larger.
+The reason why the optical mode density of ET-HF is comparable with that of Advanced LIGO 
+nevertheless the cavity length of ET-HF is longer stems from the difference of beam shape, 
+TEM$_{00}$ and LG$_{33}$. Since the beam in Advanced LIGO is Gaussian (TEM$_{00}$), a larger beam radius 
+implies smaller interval between optical transverse modes. On the other hand, ET-HF adopts 
+the LG33 mode, higher optical transverse mode. The radius of higher mode is larger than that of TEM00. 
+Thus, it is not necessary to increase the radius of fundamental mode (TEM$_{00}$). This effect cancels 
+that of longer length of cavity. 
+ 
+In total, the number of the instable modes, which is proportional
+to the product of the elastic and optical mode densities, of the
+ET-HF interferometer is 7 times larger than that of the Advanced LIGO interferometer. 
+The main reason of the difference of Advanced LIGO and ET-HF is that of size of mirrors. 
+
+\textbf{Parametric instability of Einstein Telescope: Mirror curvature dependence of ET-C-HF}
+\nopagebreak
+
+The instability strength $R$ is a function of the transverse optical
+mode frequencies. How the curvature variation affects
+the $n$-th optical transverse mode was calculated.
+The result is 1.2$n$ Hz/m in ET-HF. This value is smaller than that of 
+Advanced LIGO (15$n$ Hz/m). The longer baseline and adopting LG33 mode 
+make mirror curvature dependence of instability smaller. 
+
+\textbf{Parametric instability of Einstein Telescope: Comparison with ET-B}
+\nopagebreak
+
+Here parametric instability of ET-B \cite{HildETconventional}, which is sensitivity in old design, 
+is compared with that of ET-C (the details about parametric instability of ET-B is 
+discussed in Ref.~\cite{Yamamoto2009}). 
+From point of view of parametric instability, ET-C is better than ET-B.
+Obviously, the first reason is that ET-C-LF has no serious problem about this instability. 
+The second reason is that ET-C-HF has (about 4 times) less instable modes and (about 3 times) 
+weaker mirror curvature dependence.
+This is because of the difference of beam shape; Gaussian beam (TEM00) in ET-B and LG33 in ET-C-HF. 
+
+\textbf{Parametric instability of Einstein Telescope: Preliminary results of calculation for parametric instability of ET-C-HF using finite element method}
+\nopagebreak
+
+%{\bf The details will appear here.}
+
+%{\bf I hope that the details of ET-C-HF can be discussed. Daniel Heinert and Sergey Strigin will calculate it.}
+
+%{\bf 
+The preliminary calculation for instability of ET-C-HF using finite element method 
+is introduced here. At first, it must be noted that 
+further investigation is necessary.
+We consider all elastic modes below 30~kHz (twice times the free spectral range of cavity). The anti-Stokes modes are 
+taken into account. Therefore, Eq.~(\ref{R}) should be rewritten as \cite{Kells2002}
+\begin{equation}
+R = \sum_{\rm optical\ mode} \frac{4PQ_{\rm m}Q_{\rm
+o}}{McL{\omega_{\rm m}}^2} \frac{\Lambda_{\rm o}}{1+\Delta
+\omega^2/{\delta_{\rm o}}^2}-\sum_{\rm optical\ mode(anti)} \frac{4PQ_{\rm m}Q_{\rm
+{o(anti)}}}{McL{\omega_{\rm m}}^2} \frac{\Lambda_{\rm o(anti)}}{1+\Delta
+\omega_{\rm anti}^2/{\delta_{\rm o(anti)}}^2}, \label{R_antiStokes}
+\end{equation}
+The number of unstable modes is only 5. One of the reasons is that some Stokes modes are canceled by 
+anti-Stokes modes effectively. If the anti-Stokes modes are neglected, there are 17 unstable modes. 
+In this calculation, the splitting of the degenerated elastic mode due to imperfectness of mirrors 
+is not taken into account \cite{Strigin2008a,Strigin2008b}. 
+Since this effect increases the number of unstable modes, it should be considered in a next step. 
+%However, even if the anti-Stokes modes are neglected, the number of unstable modes is smaller than 
+%Advanced LIGO (20$\sim$60). Previous discussion predicts that number of unstable modes is about 7 times 
+%larger than that of Advenced LIGO. The reason should be investigated. One of the possible reasons is that 
+%beam shape (LG33) is not taken into account in previous discussion, i.e.\ the complicate beam shape might 
+%make $\Lambda_{\rm o}$ smaller (Daniel and Sergey are comparing the overlap factors for some modes of the
+%ET-HF standard configuration. Some results?). 
+
+We calculated the instability with the other mirror curvature. 
+The curvature of one mirror is changed. The new curvature is 5743~m.
+In this case, the number of unstable modes is 5. 
+So, the number of unstable modes does not depend on mirror curvature 
+supporting the conclusion of the previous discussion.
+
+%Shape of optical and elastic modes in the worst case (highest $R$)?}
+
+\textbf{Instability suppression in ET-C-HF}
+\nopagebreak
+
+Although the strength of the instability of the ET-HF interferometer
+is comparable with that of Advanced LIGO, the number of
+the unstable modes is 7 times larger. The three methods for the
+instability suppression in Advanced LIGO are being studied
+\cite{Ju2006b,Gras2006,Ju2009}. Let us consider whether these three
+methods (thermal tuning method, feedback control, Q reduction of
+elastic modes) are appropriate for ET (the tranquilizer cavity
+\cite{Braginsky2002} is one of the other methods. However, this
+is not introduced here).
+
+%{\bf I think something should be added.}
+
+\textbf{Instability suppression in ET-C-HF: Thermal tuning method}
+\nopagebreak
+
+In the thermal tuning method \cite{Ju2006b}, a part of the mirror is
+heated for curvature control. Since $R$ depends on the curvature,
+the suppression of $R$ should be possible by this manner. However,
+this method is not useful in ET-HF because the mirror curvature dependence of 
+parametric instability is 10 times smaller than that of Advanced LIGO. 
+
+\textbf{Instability suppression in ET-C-HF: Feedback control}
+
+It is possible to control the light or the mirror so that the
+parametric instabilities would be actively suppressed \cite{Ju2006b,Ju2009}.
+If the number of unstable modes is smaller, feedback control is
+easier. However, these are more difficult (active) methods than Q
+reduction (passive method) of the elastic modes, especially, if
+there are many unstable modes. Therefore, it is good that 
+almost all modes are suppressed by passive method and that 
+only strong instable modes are supressed by active method. 
+
+\textbf{Instability suppression in ET-C-HF: Q reduction of elastic modes}
+\nopagebreak
+
+%\begin{figure}[thbp]
+%\centering
+%\includegraphics[width=0.8\textwidth]{Sec_Optics/coatingPI.pdf}
+%\caption{Loss on the barrel surface. Although this loss decreases the
+%elastic Q-values of the mirror, $Q_{\rm m}$, it has only a small
+%contribution to the thermal noise \cite{Levin1998,Yamamoto2006}. Thus,
+%this loss suppresses the parametric instabilities without an
+%increase of the thermal noise \cite{Gras2006,Gras2004}.}
+%\label{Fig:opt_coatingPI}   
+%\end{figure}
+
+
+This is a useful method \cite{Gras2006} for ET. The value of
+$R$ is proportional to the Q-value of the elastic mode, $Q_{\rm
+m}$, as shown in Eq. (\ref{R}). The Q-values of fused silica 
+are about $10^8$ \cite{Numata2004}. The
+maximum $R$ of ET is comparable with that of Advanced LIGO, on the order of 100
+hundreds at most \cite{Ju2006b}. If the Q-values of the ET-HF mirrors become $10^6$, 
+almost all modes become stable. Since
+the mechanical loss concentrated far from the beam spot has a
+small contribution to the thermal noise \cite{Levin1998,Yamamoto2002},
+we should be able to apply additional loss on a barrel surface 
+%as in Fig. \ref{coatingPI}, 
+%without sacrificing the thermal noise
+\cite{Gras2006,Gras2004}. 
+The thermal noise caused by loss on barrel surface is 
+$4.3 \times 10^{-25}/\sqrt{\rm Hz}$ at 100~Hz (details are described 
+in Appendix after the summary of parametric instability). This is comparable with ET-HF sensitivity. 
+However, this estimation is not precious (in order to simplify the discussion, 
+it is assumed that laser beam is Gaussian although it is LG33). We should investigate thermal noise 
+introduced by loss on barrel surface. 
+%I hope that Daniel Heinert and Sergey Strigin will provide useful supports.}
+
+We are able to introduce the loss on the barrel surface by the
+coating Ta$_2$O$_5$, which is a popular material for the
+reflective coating of the mirrors. According to Ref.
+\cite{Yamamoto2006}, the loss angle of the
+SiO$_2$/Ta$_2$O$_5$ coating is $(4 \sim 6) \times 10^{-4}$ between
+4 K and 300 K. Since the loss of this coating is dominated by that
+of Ta$_2$O$_5$ \cite{Penn2003}, the loss angle of Ta$_2$O$_5$ is $(8
+\sim 12) \times 10^{-4}$. If the barrel loss dominates the mirror
+Q, it would be expressed as \cite{Yamamoto2002}
+\begin{equation}
+\frac1{Q_{\rm m}} \sim \frac{E_{{\rm Ta}_2{\rm O}_5}}{E_{\rm substrate}}
+\frac{2 d}{R}\phi,
+\label{1/Qm}
+\end{equation}
+where $E_{{\rm Ta}_2{\rm O}_5},E_{\rm substrate}, d, R, \phi$ are
+the Young's moduli of Ta$_2$O$_5$ and the mirror substrate, the
+thickness of the Ta$_2$O$_5$ layer, the mirror radius and the loss
+angle of Ta$_2$O$_5$, respectively. These values are summarized in
+Table \ref{tab:coatingspe} \cite{Hild2010a, Yamamoto2006}. In order
+to arrive at Q-values of $Q_{\rm m} \sim 10^6$, the Ta$_2$O$_5$ coating
+thickness $d$ must be 80 $\mu$m in the case of ET-HF. 
+\begin{table}[h]
+\begin{center}
+%\begin{ruledtabular}
+\begin{tabular}{ll}
+\hline
+\hline
+Young's modulus of the Ta$_2$O$_5$ ($E_{{\rm Ta}_2{\rm O}_5}$)
+&$1.4 \times 10^{11}$ Pa\\
+Young's modulus of the fused silica &$7.2 \times 10^{10}$ Pa\\
+Mirror radius ($R$)&31 cm\\
+Loss angle of Ta$_2$O$_5$ ($\phi$)&$10^{-3}$\\
+\hline
+\hline
+\end{tabular}
+%\end{ruledtabular}
+\end{center}
+\caption{Specification of the coating
+\cite{Hild2010a, Yamamoto2006}.\label{tab:coatingspe}}
+\end{table}
+
+Recently, another method to reduce Q-values of elastic mode (using electrostatic actuator) is proposed 
+\cite{Miller2011}. 
+It should be considered in near future. 
+
+\etbox{i}{box:result}{Summary}
+{The parametric instability of ET-C is discussed 
+(it is expected that the result of ET-D is similar). 
+%It is better than that of ET-B. 
+The instability of ET-C-LF is not a serious issue because of the small light power. 
+The maximum strength of instability of ET-C-HF is comparable to that of Advanced LIGO. 
+The mirror curvature depepndence of ET-C-HF instability is about 10 times 
+weaker than that of Advanced LIGO because of longer baseline and LG33 beam.
+However, the instable mode number is 7 times larger (In order to evaluate a precise number, 
+the calculation using finite element method is necessary. This calculation is in progress). 
+This is mainly owing to the larger mirrors of ET.
+We should investigate how to suppress. 
+Feedback control and Q reduction of elastic modes are candidates.}
+
+\textbf{Appendix A : Mirror scale dependence of thermal noise by barrel surface loss}
+\nopagebreak
+
+The ET mirror is larger than the Advanced LIGO mirror. We must consider the
+size effect on the thermal noise by the loss on the barrel surface. In order to
+simplify the discussion, it is supposed that the mirror and laser
+beam of ET are similar to those of Advanced LIGO (although the beam of ET-HF is 
+LG33, not Gaussian). In short, the difference
+between ET and Advanced LIGO mirrors is only the scale. The ratio of beam
+radius to mirror radius is the same.
+%In order to simplify the discussion,
+%it is supposed that the beam radius and thickness of loss layer on
+%barrel surface is proportional to mirror radius and that the ratio
+%of mirror thickness to mirror diameter is constant.
+Under these assumptions, Q-values of mirrors are independent of the
+mirror scale, $a$. According to Ref. \cite{Levin1998}, the amplitude
+of the thermal noise $\sqrt{G_{\rm coating}}$ is described as
+\begin{equation}
+\sqrt{G_{\rm coating}} \propto \sqrt{W_{\rm diss}},
+\label{Levin}
+\end{equation}
+where $W_{\rm diss}$ is the dissipated power when the pressure of
+which the profile $p(r)$ is the same as the laser beam is applied
+on the mirror flat surface. If the loss is the structure damping,
+the dissipated power is proportional to the elastic energy in the
+loss layer on the barrel surface;
+\begin{equation}
+W_{\rm diss} \propto \int_{\rm barrel\ surface} {\cal E} dS \times d,
+\label{Wdiss}
+\end{equation}
+where ${\cal E}$ and $d$ are the elastic energy density and the thickness of
+the loss layer. The problem is how $W_{\rm
+diss}$ depends on the mirror scale $a$. Since the mirrors are
+similar, $dS$ and $d$ are described as
+\begin{eqnarray}
+dS &\propto& a^2,\\
+d &\propto& a.
+\end{eqnarray}
+The elastic energy density ${\cal E}$ is proportional to the
+square of the strain tensor. The strain tensor is proportional to
+the pressure on the flat surface $p$. This pressure is inverse
+proportional to the square of the scale. In short, the elastic
+energy density is written as
+\begin{equation}
+{\cal E} \propto p^2 \propto \frac1{a^4}.
+\end{equation}
+We are able to obtain the relationship between the thermal noise
+and the mirror scale;
+\begin{equation}
+\sqrt{G_{\rm coating}} \propto \sqrt{\frac1{a^4} \times a^2 \times a} = \sqrt{\frac1{a}}.
+\label{parametric instability size correction}
+\end{equation}
+
+Above discussion is based on the assumption that the ratio of the
+beam radius to mirror radius is constant. If the mirror size is
+fixed, the thermal noise by the barrel loss is independent of the beam size
+\cite{Yamamoto2002}. Therefore, the thermal noise by the barrel
+surface coating is inverse proportional to the square root of the
+mirror scale.
+
+The thermal noise caused by surface coating for instability supression is evaluated. The 
+thermal noise by the holes with loss on the barrel surface is investigated in Ref. \cite{Gras2004}.
+The size of their mirror is 150~mm in diameter and 60~mm in thickness. The mass is 2.3~kg. Since 
+the mass of ET-HF is 200~kg, the size of ET-HF mirror is about $(200/2.33)^{1/3}\sim4.4$ times larger.
+The beam radius of ET-HF is 72.5~mm. If the ratio of beam radius to mirror radius is the same, 
+the beam radius of ET-HF corresponds to 1.6~cm in Ref. \cite{Gras2004}. Figure 4 of Ref. \cite{Gras2004} 
+shows that mirror thermal noise (displacement) with 1.6~cm radius beam is about $10^{-20}~{\rm m/}\sqrt{\rm Hz}$ at 100~Hz. 
+Since there are 4 mirrors and cavity length is 10~km, it corresponds to 
+a strain noise amplitude of $2 \times 10^{-24}~/\sqrt{\rm Hz}$.
+We should take correction of size, Eq.~(\ref{parametric instability size correction}), into account.  
+The Q-values of mirror with this loss in Ref.~\cite{Gras2004} 
+is $1/(10^{-2}\times5\times10^{-4})=2\times10^5$. Since we assume 
+that Q-value is $10^{6}$, we should take this difference into account. In total,
+\begin{equation}
+2 \times 10^{-24}~/\sqrt{\rm Hz} \times \sqrt{\frac{1}{4.4}} \times \sqrt{\frac{2 \times 10^5}{10^6}} = 4.3 \times 10^{-25}~\sqrt{\rm Hz}
+\end{equation}
+This value is comparable with the ET-HF sensitivity. 
+However, this evaluation is not precise. For example, we assumed that beam is Gaussian. 
+However, ET-HF will adopt LG beam. These effects should be investigated. 
+%I hope that Daniel Heinert and Sergey Strigin will provide useful supports.}
+
+
+
+
