@@ -1,0 +1,122 @@
+\documentclass[color,DIV12,pdftex,a4paper]{ET-DS}
+\usepackage{verbatim}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%
+\usepackage{ae}
+\usepackage{lastpage}
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{colortbl}
+\usepackage{color}
+\usepackage{parskip}
+\usepackage{chapterbib}
+\usepackage{xspace}
+\usepackage[english]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage{float}
+\input{ET-macros2.tex}
+\usepackage[section] {placeins}
+\usepackage[sectionbib, numbers, sort&compress, square]{natbib}
+%\documentstyle{elsart-harv}
+\usepackage[pdftex,pagebackref=true,pdfpagelabels=true]{hyperref}
+\definecolor{linkcolor}{rgb}{.8,0,0}
+\definecolor{urlcolor}{rgb}{0,0,.7}
+\definecolor{citecolor}{rgb}{0,.5,0}
+\definecolor{acrocolor}{rgb}{0,0,.7}
+\hypersetup{bookmarksopen,colorlinks=true}
+\hypersetup{pdfstartview=FitH}
+\hypersetup{linktocpage=true,bookmarksnumbered=true}
+\hypersetup{plainpages=false,breaklinks=true}
+\hypersetup{linkcolor=linkcolor,citecolor=citecolor,urlcolor=urlcolor}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{eurosym}
+%
+% comment this line to cancel the watermark
+%
+%\usepackage{everypage,draftwatermark}
+%\pdfminorversion=6
+%
+% separates the caption from the text and make the caption label bold: 
+%
+\usepackage[hang,small,bf]{caption}
+%
+% user defined commands
+%
+% \citeurl{key} cite the URL of a web site, if this has been inserted in the .bbl file as author of a (electronic) entry
+%
+\newcommand{\citeurl}[1]
+{
+\citeauthor{#1}\@\xspace
+}
+%
+% \citeurlp is like \citeurl, but between parentesis
+%
+\newcommand{\citeurlp}[1]
+{
+(\citeauthor{#1})\@\xspace
+}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bear}{\begin{array}}
+\newcommand{\ear}{\end{array}}
+\newcommand{\dy}{\displaystyle}
+\newcommand{\beg}{\begin{gathered}}
+\newcommand{\eeg}{\end{gathered}}
+%pdf stuff
+\pdfinfo{/Title ET Design Study document
+        /Subject Einstein Telescope
+         /Author (ET Science Team)
+         /Keywords (gravitational wave  Einstein Telescope design study)}
+\pagenumbering{roman}
+
+\title{Einstein gravitational wave Telescope conceptual design study} \shorttitle{ET Design Study}
+\refnum{ET-0106A-10}
+\issue{3}
+\input{ETDSauthors}
+%
+\date{\today}
+
+
+\begin{document}
+%\SetWatermarkText{Confidential}
+%
+\selectlanguage{english}
+\begin{titlepage}
+\pdfbookmark[1]{Title}{title}
+\maketitle
+\end{titlepage}
+\clearpage
+%
+\FloatBarrier
+%
+\vspace{1cm}
+\pagenumbering{arabic}
+\setcounter{page}{4}
+%
+{\setlength{\baselineskip}{0pt} \tableofcontents}
+\vspace{1cm}
+\hrule height 1pt
+%\vspace{1cm}
+\clearpage
+
+
+\printnomenclature[0.75in] 
+\newpage 
+
+\citeindextrue
+\FloatBarrier
+\section{Science case}
+\input{ET_ScienceCase-Formatted.tex}
+
+
+
+\FloatBarrier
+\section*{References}
+\bibliographystyle{ieeetr} % changed to have numerical sorting of the citations
+\bibliography{ReferencesET}{}
+ 
+\end{document}

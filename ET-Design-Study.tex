@@ -1,0 +1,249 @@
+\documentclass[color,DIV12,pdftex,a4paper]{ET-DS}
+\usepackage{verbatim}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%
+\usepackage{ae}
+\usepackage{lastpage}
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{parskip}
+\usepackage{chapterbib}
+\usepackage{xspace}
+\usepackage[english]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage[sectionbib, numbers, sort&compress, square]{natbib}
+%\documentstyle{elsart-harv}
+\usepackage[pdftex,pagebackref=true,pdfpagelabels=true]{hyperref}
+\input{ET-macros.tex}
+\definecolor{linkcolor}{rgb}{.8,0,0}
+\definecolor{urlcolor}{rgb}{0,0,.7}
+\definecolor{citecolor}{rgb}{0,.5,0}
+\definecolor{acrocolor}{rgb}{0,0,.7}
+\hypersetup{bookmarksopen,colorlinks=true}
+\hypersetup{pdfstartview=FitH}
+\hypersetup{linktocpage=true,bookmarksnumbered=true}
+\hypersetup{plainpages=false,breaklinks=true}
+\hypersetup{linkcolor=linkcolor,citecolor=citecolor,urlcolor=urlcolor}
+%\usepackage{float}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{hhline}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{eurosym}
+\usepackage{rotating}
+\usepackage[absolute]{textpos}
+\usepackage[page,toc]{appendix}
+\usepackage{wrapfig}
+
+
+
+%
+% comment this line to cancel the watermark
+
+%\usepackage{everypage,draftwatermark}
+%\pdfminorversion=6
+%
+% separates the caption from the text and make the caption label bold: 
+%
+\usepackage[hang,small,bf]{caption}
+%
+% user defined commands
+%
+% \citeurl{key} cite the URL of a web site, if this has been inserted in the .bbl file as author of a (electronic) entry
+%
+\newcommand{\citeurl}[1]
+{
+\citeauthor{#1}\@\xspace
+}
+%
+% \citeurlp is like \citeurl, but between parentesis
+%
+\newcommand{\citeurlp}[1]
+{
+(\citeauthor{#1})\@\xspace
+}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bear}{\begin{array}}
+\newcommand{\ear}{\end{array}}
+\newcommand{\dy}{\displaystyle}
+\newcommand{\beg}{\begin{gathered}}
+\newcommand{\eeg}{\end{gathered}}
+%pdf stuff
+\pdfinfo{/Title ET Design Study document
+        /Subject Einstein Telescope
+         /Author (ET Science Team)
+         /Keywords (gravitational wave  Einstein Telescope design study)}
+\pagenumbering{roman}
+
+\title{Einstein gravitational wave Telescope conceptual design study} \shorttitle{ET Design Study}
+\refnum{ET-0106C-10}
+\issue{4}
+\input{ETDSauthorslatest}
+%
+\date{\today}
+
+\begin{document}
+\begin{textblock*}{300mm}(0mm,0mm)   \includegraphics[width=\paperwidth]{Sec_Conclusions/FirstPagelatest4.jpg}
+\end{textblock*}
+%
+%\newpage
+%\cleardoublepage 
+%\SetWatermarkText{Confidential}
+%
+\selectlanguage{english}
+\begin{titlepage}
+\pdfbookmark[1]{Title}{title}
+\maketitle
+\end{titlepage}
+\clearpage
+%
+\FloatBarrier
+%
+\section*{Abstract}
+% write here a short abstract, 10 line max
+This document describes the Conceptual Design of a third generation gravitational wave observatory named Einstein Telescope (``ET''). The design of this new research infrastructure has been realised with the support of the European Community's Seventh Framework
+Programme (FP7/2007-2013) under grant agreement n~211743.  In this document are described the fundamental design options, the site requirements, the main technological solutions, a rough evaluation of the costs and a schematic time plan.
+%
+\vspace{1cm}
+
+\pagenumbering{arabic}
+\setcounter{page}{4}
+%
+{\setlength{\baselineskip}{0pt} \tableofcontents}
+\vspace{1cm}
+\hrule height 1pt
+%\vspace{1cm}
+
+
+\citeindextrue
+\cleardoublepage  
+%\FloatBarrier
+%\newpage
+%\begin{textblock*}{297mm}(-2mm,1mm)   
+%\includegraphics[width=1.01\paperwidth]{ETatNight.jpg}
+%\end{textblock*}
+%\begin{center}
+%\Huge \textcolor{yellow}{The Einstein gravitational wave Telescope \\Design Study}
+%\end{center}
+%\normalsize
+\cleardoublepage  
+\FloatBarrier
+\section{Introduction to the ET project}
+\input{Sec_Introduction/Introduction}
+%
+\cleardoublepage
+\FloatBarrier
+\begin{textblock*}{297mm}(0mm,0mm)   \includegraphics[width=\paperwidth]{Sec_ET_ScienceCase/BackgroundFirstPageScienceCase.jpg}
+\end{textblock*}
+\section{Science case}
+\input{Sec_ET_ScienceCase/ET_ScienceCase}
+
+\cleardoublepage
+\FloatBarrier
+%
+%
+\begin{textblock*}{297mm}(0mm,0mm)   \includegraphics[width=\paperwidth]{Sec_SiteInfra/Figures/RotatedArtisticView2.jpg}
+\end{textblock*}
+
+%\newpage
+\FloatBarrier
+\section{Site and infrastructures } \label{sec:SiteInfra}
+\input{Sec_SiteInfra/SiteInfrastructures}
+%
+\cleardoublepage 
+\FloatBarrier
+%
+%
+\begin{textblock*}{297mm}(0mm,0mm)   \includegraphics[width=\paperwidth]{Sec_Suspensions/Figures/SuspensionBackgroundFirstPage.jpg}
+\end{textblock*}
+%
+\section{Suspension systems} \label{sec:suspension_systems}
+\input{Sec_Suspensions/Suspensions}
+%
+%
+\cleardoublepage
+\FloatBarrier
+%
+\begin{textblock*}{297mm}(0mm,0mm)   \includegraphics[width=\paperwidth]{Sec_Optics/OpticsFirstPage.jpg}
+\end{textblock*}
+%
+\section{Optical design}
+\input{Sec_Optics/Optics}
+%
+%
+%
+\cleardoublepage 
+\FloatBarrier
+\begin{textblock*}{297mm}(0mm,0mm)   \includegraphics[width=\paperwidth]{Sec_Conclusions/ConclusionBackgroundImage.jpg}
+\end{textblock*}
+%
+%
+\section{Overall budget and timeline considerations}
+\input{Sec_Conclusions/Conclusions}
+
+\cleardoublepage
+\FloatBarrier
+\input{Appendices/Sec_Appendices}
+%
+\FloatBarrier
+\section{Acknowledgements}
+\label{Acknowledgements}
+\input{Acknowledgements}
+%
+%\begin{thebibliography}{10}
+
+%\bibitem{Testreference00} Mr X and Mrs Y  "Something important about gravitational wave astronomy"
+%\emph{CQG} \textbf{Vol. XX, Issue X} (2000) xxx
+
+%\end{thebibliography}
+%
+% \FloatBarrier
+\clearpage % works better than \FloatBarrier here
+\phantomsection
+\addcontentsline{toc}{section}{Bibliography}
+% \bibliographystyle{ieeetr} % changed to have numerical sorting of the citations
+\bibliographystyle{et_dsd} %peter Wessels custom made style file for ET DS
+
+\bibliography{ReferencesET}{}
+ 
+% Choose Phys. Rev. style for bibliography
+%\bibliographystyle{authordate2}
+%\bibitem{PPP} F. Piergiovanni, M. Punturo, P.Puppo, "The thermal noise of the Virgo+ and Virgo Advanced Last Stage Suspension (The PPP effect)", Virgo-Note, VIR-015C-09.
+%\bibitem{LSSpaper} Bernardini A., Majorana E. ,Puppo P. ,Rapagnani P. , Ricci F., Testi G. "Suspension last stages for the mirrors of the Virgo interferometric gravitational wave antenna." Rev. Sci. Instr. 70, no. 8 (1999): 3463.
+
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+\listof{ETbox}{List of Boxes}
+\newpage
+\input{nomenclature.tex}
+\printnomenclature[0.75in] 
+\newpage
+%\section*{Impressum}
+\include{impressum}
+\newpage 
+%
+\FloatBarrier
+%
+%
+\pagestyle{empty}
+\begin{textblock*}{297mm}(0mm,0mm)   \includegraphics[width=\paperwidth]{TheETscienceTeam.jpg}
+\end{textblock*}
+\newpage
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

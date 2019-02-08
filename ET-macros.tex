@@ -1,0 +1,179 @@
+\usepackage{framed} 
+\usepackage{ifthen}
+
+%%%%%%%%% begin: macros for creating  ET boxes %%%%%%%% 
+\newcommand{\titlecolor}{white}
+\newcommand{\captioncolor}{white}
+\newcommand{\contentcolor}{white}
+\newcommand{\ccolor}{\definecolor{citecolor}{rgb}{0,.5,0}}
+\newcommand{\lcolor}{\definecolor{linkcolor}{rgb}{.8,0,0}}
+\newcommand{\ucolor}{\definecolor{urlcolor}{rgb}{0,0,.7}}
+\newcommand{\etboxwidth}{0.975\textwidth}
+\newcommand{\etboxskip}{0.0125\textwidth} % this is (1-\etboxwidth)/2
+\newcommand{\etboxmargin}{0.5cm}
+
+\floatstyle{ruled} 
+\newfloat{ETbox}{t}{lop}[section] %bhp
+
+\newenvironment{ETboxenvironment}[1][\hsize]{%
+\def\FrameCommand{\fcolorbox{framecolor}{shadecolor}}%
+\MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}}%
+{\endMakeFramed}
+
+%%% The long ET box %%%%
+\def\longetbox#1#2#3#4{ 
+\definecolor{framecolor}{cmyk}{1,1,1,1}%
+\ifthenelse{\equal{#1}{r}}{%
+\definecolor{darkred}{rgb}{0.6,0,0}
+\definecolor{semidarkred}{rgb}{0.8,0,0}
+\floatname{ETbox}{\color{darkred}\large Box}% 
+\renewcommand{\titlecolor}{darkred}%
+\renewcommand{\captioncolor}{darkred}%
+\renewcommand{\contentcolor}{semidarkred}%
+\renewcommand{\ccolor}{\definecolor{citecolor}{rgb}{0,0,0.8}}%
+\renewcommand{\lcolor}{\definecolor{linkcolor}{rgb}{.0,.8,0}}%
+\renewcommand{\ucolor}{\definecolor{urlcolor}{rgb}{0,0.8,0.8}}%
+\definecolor{shadecolor}{rgb}{1,0.9,0.7}}{%
+\ifthenelse{\equal{#1}{i}}{%
+\floatname{ETbox}{\color{blue}\large Box}% 
+\renewcommand{\titlecolor}{blue}%
+\renewcommand{\captioncolor}{blue}%
+\renewcommand{\contentcolor}{blue}%
+\renewcommand{\ccolor}{\definecolor{citecolor}{rgb}{0,.5,0}}
+\renewcommand{\lcolor}{\definecolor{linkcolor}{rgb}{.8,0,0}}
+\renewcommand{\ucolor}{\definecolor{urlcolor}{rgb}{0.9,0.,0.9}}
+\definecolor{shadecolor}{cmyk}{.07,.01,0,0}}{%
+\ifthenelse{\equal{#1}{h}}{%
+\floatname{ETbox}{\color{blue}\large Box}% %%%%%%%%%%%%%%%%%%
+\renewcommand{\titlecolor}{blue}%
+\renewcommand{\captioncolor}{blue}%
+\renewcommand{\contentcolor}{black}%
+\renewcommand{\ccolor}{\definecolor{citecolor}{rgb}{0,.5,0}}%
+\renewcommand{\lcolor}{\definecolor{linkcolor}{rgb}{.8,0,0}}%
+\renewcommand{\ucolor}{\definecolor{urlcolor}{rgb}{0,0,.7}}%
+\definecolor{shadecolor}{cmyk}{0,0,.3,0}}{}{}}}%
+\vspace{\parskip} 
+\color{\contentcolor}
+\fboxrule 0.75pt
+\setlength{\fboxsep}{\etboxmargin}
+\begin{ETboxenvironment}[\etboxwidth] 
+\arrayrulecolor{\contentcolor}
+\ccolor
+\lcolor
+\ucolor
+\captionsetup{labelfont={color=\contentcolor,bf}, textfont={color=\contentcolor}, labelsep=colon}%, margin=\etboxskip}%
+\captionof{ETbox}[#3]{\textcolor{\captioncolor}{\large\bf#3}} 
+\captionsetup{labelfont={color=\contentcolor,bf}, textfont={color=\contentcolor},labelsep=colon}%, margin=\etboxskip}  % add something of geometry
+#4
+\label{#2} 
+\end{ETboxenvironment} 
+\arrayrulecolor{black} 
+\color{black} 
+%\definecolor{citecolor}{rgb}{0,.5,0}
+%\definecolor{linkcolor}{rgb}{.8,0,0}
+%\definecolor{urlcolor}{rgb}{0,0,.7}
+
+}
+%%%%%%%%%%  %%%%%%%%
+
+
+%%%%%%% the one-page ETbox %%%%%%%% 
+
+\def\etbox#1#2#3#4{ 
+\definecolor{framecolor}{cmyk}{1,1,1,1}%
+\ifthenelse{\equal{#1}{r}}{%
+\definecolor{darkred}{rgb}{0.6,0,0}
+\definecolor{semidarkred}{rgb}{0.8,0,0}
+\floatname{ETbox}{\color{darkred}\large Box}% 
+\renewcommand{\titlecolor}{darkred}%
+\renewcommand{\captioncolor}{darkred}%
+\renewcommand{\contentcolor}{semidarkred}%
+\renewcommand{\ccolor}{\definecolor{citecolor}{rgb}{0,0,0.8}}%
+\renewcommand{\lcolor}{\definecolor{linkcolor}{rgb}{.0,.8,0}}%
+\renewcommand{\ucolor}{\definecolor{urlcolor}{rgb}{0,0.8,0.8}}%
+%\floatname{ETbox}{\color{white}\large Box}% 
+%\renewcommand{\titlecolor}{white}%
+%\renewcommand{\captioncolor}{white}%
+%\renewcommand{\contentcolor}{white}%
+%\renewcommand{\ccolor}{\definecolor{citecolor}{rgb}{.4,.9,.9}}%
+%\renewcommand{\lcolor}{\definecolor{linkcolor}{rgb}{.9,.9,0}}%
+%\renewcommand{\ucolor}{\definecolor{urlcolor}{rgb}{0,0.9,.5}}%
+%\definecolor{shadecolor}{cmyk}{.0,.8,.7,0}}{%
+\definecolor{shadecolor}{rgb}{1,0.9,0.7}}{%
+%\definecolor{shadecolor}{rgb}{0.65,0.09,0.09}}{%
+\ifthenelse{\equal{#1}{i}}{%
+\floatname{ETbox}{\color{blue}\large Box}% 
+\renewcommand{\titlecolor}{blue}%
+\renewcommand{\captioncolor}{blue}%
+\renewcommand{\contentcolor}{blue}%
+\renewcommand{\ccolor}{\definecolor{citecolor}{rgb}{0,.5,0}}
+\renewcommand{\lcolor}{\definecolor{linkcolor}{rgb}{.8,0,0}}
+\renewcommand{\ucolor}{\definecolor{urlcolor}{rgb}{0.9,0.,0.9}}
+\definecolor{shadecolor}{cmyk}{.07,.01,0,0}}{%
+\ifthenelse{\equal{#1}{h}}{%
+\floatname{ETbox}{\color{blue}\large Box}% 
+\renewcommand{\titlecolor}{blue}%
+\renewcommand{\captioncolor}{blue}%
+\renewcommand{\contentcolor}{black}%
+\renewcommand{\ccolor}{\definecolor{citecolor}{rgb}{0,.5,0}}%
+\renewcommand{\lcolor}{\definecolor{linkcolor}{rgb}{.8,0,0}}%
+\renewcommand{\ucolor}{\definecolor{urlcolor}{rgb}{0,0,.7}}%
+\definecolor{shadecolor}{cmyk}{0,0,.3,0}}{}{}}}%
+\begingroup
+\begin{center}   
+\begin{minipage}[t]{\etboxwidth} 
+\leftskip=\etboxskip
+\rightskip=\etboxskip
+\definecolor{framecolor}{cmyk}{1,1,1,1}
+\begin{framed} 
+\vspace{-9pt} 
+\arrayrulecolor{\contentcolor}
+\begin{shaded}       
+\lcolor
+\ccolor
+\ucolor
+\captionsetup{labelfont={color=\captioncolor,bf}, textfont={color=\captioncolor}, labelsep=colon, margin=\etboxskip}%
+\captionof{ETbox}[#3]{\textcolor{\captioncolor}{\large\bf#3}} 
+\captionsetup{labelfont={color=\titlecolor,bf}, textfont={color=\contentcolor},labelsep=colon, margin=\etboxskip}%\etboxmargin} 
+\textcolor{\contentcolor}{#4} 
+\label{#2} 
+\end{shaded} 
+\vspace{-9pt} 
+\end{framed} 
+\end{minipage} 
+\end{center} 
+\endgroup
+\vspace{9pt} 
+\arrayrulecolor{black} 
+\color{black} 
+%\definecolor{citecolor}{rgb}{0,.5,0}
+%\definecolor{linkcolor}{rgb}{.8,0,0}
+%\definecolor{urlcolor}{rgb}{0,0,.7}
+}
+%%%%%%%%%%% end: macros for creating a box %%%%%%%%
+%
+
+
+
+
+
+%%% begin:  macros for creating the Glossary %%%%%%%
+\usepackage{ifthen}
+\usepackage[cfg, intoc]{nomencl}
+\renewcommand{\nomgroup}[1]{%
+ \ifthenelse{\equal{#1}{S}}{\vspace{30pt}\item[]\hspace*{-\leftmargin}%
+ \rule[2pt]{0.45\linewidth}{1pt}%
+ \hfill \textbf{Symbols} \hfill
+ \rule[2pt]{0.45\linewidth}{1pt}\vspace{-5pt} \item[]\hspace*{-\leftmargin}\vspace{5pt}\hspace{1.1cm}Please note that some symbols might stand for more than one quantity depending on the context}{%
+\ifthenelse{\equal{#1}{A}}{\item[]\hspace*{-\leftmargin}
+\rule[2pt]{0.45\linewidth}{1pt}%
+\hfill \textbf{Abbreviations} \hfill
+\rule[2pt]{0.45\linewidth}{1pt}}{%
+\ifthenelse{\equal{#1}{G}}{\vspace{30pt}\item[]\hspace*{-\leftmargin}
+\rule[2pt]{0.45\linewidth}{1pt}%
+\hfill \textbf{Glossary} \hfill
+\rule[2pt]{0.45\linewidth}{1pt}}{}{}}}}
+\renewcommand{\nomname}{Nomenclature}
+\makenomenclature
+       %%% end:  macros for creating the  Glossary %%%%%%%
+
