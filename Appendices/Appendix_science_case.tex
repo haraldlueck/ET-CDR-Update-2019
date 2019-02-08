@@ -1,0 +1,430 @@
+%\subsection{ET's response and its sky resolution}
+%\label{app:response and sky resolution}
+
+%Describe here ET's response, how it is equivalent to two 
+%L-shaped interferometers, the null stream, how ET is able
+%to measure the two polarizations, what its angular resolution is going
+%to be, etc.
+
+\subsection{Detection Rate of BNS Systems in ET}
+\label{box:nsrateestimate}
+Binary neutron stars have a relatively short {\em delay time,} the 
+time between the formation of the binary system of massive stars and the merger \cite{Regimbau:2009}. 
+Therefore, the coalescence
+rate roughly traces the star formation rate of the universe.
+
+For example, assuming all gas forms stars 
+similar to the present day Milky Way, the current Milky Way compact 
+object merger rate allow us rescale the \emph{total} 
+star formation rate of the universe into an 
+instantaneous merger rate per unit volume    
+\begin{equation}
+\dot{\rho}_{c}(z) = \lambda \frac{SFR(z)}{1+z}  \,\ \mathrm{with}\,\ \dot{\rho}_{c}(0) = R_{\rm{MW}} n_{\rm{MW}}
+\end{equation}
+In this expression, $SFR$ is the star formation rate in M$_{\odot}^{-1}$ Mpc$^{-3}$ yr$^{-1}$ (see for instance \cite{sfr-HopkinsBeacom2006,PSellipticals} ),  and $\lambda$ is the number of compact binary progenitors formed per unit of gas mass in M$_{\odot}^{-1}$, assumed to be the same at all redshifts. The coalescence rate is normalized by the local rate at $z=0$, obtained by multiplying the actual galactic rate $R_{\rm{MW}}$ in yr$^{-1}$ and the local density of Milky Way equivalent galaxies $n_{\rm{MW}}$ in Mpc$^{-3}$ is found by multiplying $\dot{\rho}_c$ by the gradient of comoving volume:
+\begin{equation}
+\frac{dR}{dz} (z)= \dot{\rho}_c(z) \frac{dV_c}{dz}(z).
+\label{dRdz}
+\end{equation}
+Depending on the target sensitivity and beampattern of the ET 
+network, the expected detection rate is roughly proportional to the 
+integral of this rate up to some peak redshift.  For most target 
+ET sensitivities this limiting redshift  $z_{\max}$ is greater 
+than 1 for binary neutron stars, suggesting $O(10^{6})$ detections 
+per year.  The enormous collections of events that ET-scale 
+instruments will observe will permit high-precision modeling 
+inaccessible with the sparse statistics available to smaller 
+detectors.
+
+%{\em Alternative Derivation}
+%The rate per unit of time and per unit of comoving volume at which BNS systems are observed to coalesce at redshift $z$ can be written as \cite{Regimbau:2009}
+%\begin{equation}
+%\dot{\rho}^0_c(z) = \dot{\rho}^0_c(0) \frac{\dot{\rho}_{\ast,c}(z)}{\dot{\rho}_{\ast,c}(0)}.
+%\end{equation}
+%Here $\dot{\rho}^0_c(0)$ is the coalescence rate at the current epoch, and $\dot{\rho}_{\ast,c}$ relates the past star formation rate (SFR) to the rate of coalescence. One has
+%\begin{equation}
+%\dot{\rho}_{\ast,c}(z) = \int \frac{\dot{\rho}_\ast(z_f)}{(1+z_f)} P(t_d) dt_d,
+%\end{equation}
+%where $\dot{\rho}_\ast$ is the SFR itself, $z$ is the redshift at which the binary coalesces, $z_f$ is the redshift at which the progenitor binary formed, and $P(t_d)$ is the probability distribution of the delay time $t_d$ between the formation of the progenitor and coalescence. $P(t_d)$ has been estimated as
+%\begin{equation}
+%P(t_d) \propto \frac{1}{t_d}\,\,\,\,\,\,\,\mbox{for}\,\,\,t_d > \tau_0,
+%\end{equation}
+%where $\tau_0$ is some minimum delay time ($\tau_0 \sim 20-100$ Myr).
+%The coalescence rate per unit redshift as observed in our local Universe is found by multiplying $\dot{\rho}^0_c$ by the gradient of comoving volume:
+%\begin{equation}
+%\frac{dR^0_c}{dz} = \dot{\rho}^0_c(z) \frac{dV_c}{dz}(z).
+%\label{dRdz}
+%\end{equation}
+%For most target ET sensitivities this limiting redshift $z_{h}^{iso}$ is greater
+%than 1 for binary neutron stars, suggesting $O(10^{6})$ detections
+%per year.  The enormous collections of events that ET-scale
+%instruments will observe will permit high-precision modeling
+%inaccessible with the sparse statistics available to smaller
+%detectors.
+
+\subsection{The \emph{Spin-Down Limit} signal amplitude}
+\label{box:sdl}
+Under the assumption that the observed spin-down of a given neutron star is due to the emission of gravitational waves, a straightforward
+calculation leads to the so-called {\it spin-down limit} on the signal amplitude $h_0^{\rm sd}$:
+\begin{equation}
+  \label{eq:4}
+  h_0^{\rm sd} = 8.06\times 10^{-19}\frac{I_{38}}{d_{kpc}}\sqrt{\frac{|\dot{f}_{\rm rot}|}{f_{\rm rot}}}
+\end{equation}
+where $I_{38} = I / 10^{38}\textrm{kg~m}^2$, $d_{kpc}$ is the distance
+to the star in kpc, $\dot{f}_{rot}$ is the spin-down rate and $f_{\rm rot}$ is the
+spin frequency.  
+The spin-down limit on the signal amplitude corresponds to an upper limit on the star's ellipticity of
+\begin{equation}
+\epsilon^{\rm sd}=0.237
+\left(\frac{h^{\rm sd}_{0}}{10^{-24}}\right)I^{-1}_{38}(f_{\rm rot}/{\rm Hz})^{-2}\,d_{\rm kpc}.
+\label{eq:epssd}
+\end{equation}
+
+\subsection{Search sensitivity to Continuous Wave sources}
+\label{box:h0min}
+For targeted searches, that are based on coherent analysis methods, the minimum detectable signal amplitude is given by
+\begin{equation}
+  h_{0,\rm min} \simeq 11.4\sqrt{\frac{S_n(f)}{DT_{\rm obs}}},
+%\label{eq:cwsens11.4}
+\label{hmin}
+\end{equation}
+where $S_n(f)$ is the detector noise power-spectral density at a
+frequency $f$, $T_{\rm obs}$ is the observation time, and $D$ is the
+number of detectors (assumed to have the same sensitivity at the frequency $f$).  The factor of 11.4 corresponds to a false alarm
+rate of $1\%$ and a false dismissal rate of $10\%$ and its exact value depends on the specific analysis method. \\  
+For wide area searches, based on semi-coherent analysis methods, or on the alternation of coherent and incoherent steps, the minimum detectable signal amplitude is given by
+\begin{equation}
+  h_{0,\rm min} \approx
+  \frac{25}{N^{1/4}}\sqrt{\frac{S_n(f)}{DT_{\rm coh}}}\,.
+%\label{eq:cwsens30}
+\label{hmin_blind}
+\end{equation}
+Here $T_{\rm coh}$ is the time length of the piece of data coherently analyzed.
+This has been found to be a fairly good estimate (within $\sim 20\%$)
+of previous semi-coherent searches (see {\em e.g.} \cite{Abbott:2005pu}).
+Note that in this case the minimum amplitude only decreases with the fourth root of the total observation time. 
+
+\subsection{Measuring $w(z)$ Using GW and CMB Observations}
+\label{sec:wandwz}
+
+To estimate the constraints on cosmological parameters from future 
+Planck CMB data, one can consider the Fisher matrix
+\begin{equation}
+F_{ij}^{\rm CMB} = \sum_{\ell = 2}^{\ell_{max}} \sum_{X X', Y Y'} 
+\frac{\partial C_\ell^{X X'}}{\partial p_i}\,
+\mbox{Cov}^{-1}(D_\ell^{X X'}, D_\ell^{Y Y'})\,
+\frac{\partial C_\ell^{Y Y'}}{\partial p_j},
+\end{equation}
+wherer $p_i$ are the cosmological parameters to be evaluated; 
+$C_\ell^{X X'}$ are the CMB power spectra and
+$D_\ell^{X X'}$ their estimates; and $\mbox{Cov}^{-1}$ is the 
+inverse of the covariance matrix at given
+angular size $\ell$ and channels $X, X'$ ($T$ for temperature, 
+$E$ for polarization). For a detailed
+discussion we refer to \cite{Zhao:2010}.
+
+Given a population of inspiral events, we can also associate a 
+Fisher matrix to the set of events:
+\begin{equation}
+F_{ij}^{\rm GW} = \sum_k \frac{\partial_i(\ln D_{\rm L}(z_k)) 
+\partial_j(\ln D_{rm L}(z_k))}{\Delta \ln D_{\rm L}(z_k)},
+\end{equation}
+where $\partial_i$, $\partial_j$ are partial derivatives with 
+respect to cosmological parameters, and the $k$ refer to 
+individual events. This Fisher matrix can be combined with the 
+one for the CMB as
+\begin{equation}
+F_{ij}^{\rm combined} = F_{ij}^{\rm GW} + F_{ij}^{\rm CMB}.
+\end{equation}
+
+\subsection{Sources of primordial stochastic GW background}
+
+\subsubsection{Stochastic GW background in Pre-Big-Bang cosmology}
+
+\label{box:prebigbang}
+The GW spectrum
+produced at the transition between the stringy phase and the radiation-dominated era is
+described as $\Omega_{\rm gw}(f)\sim f^3$ for $f<f_s$ and
+$\Omega_{\rm gw}(f) \sim f^{3-2\mu}$ for $f_s<f<f_1$ \cite{Buonanno1997,mand06}.
+%The turnover frequency is essentially unconstrained, $\mu<1.5$
+%reflects the evolution of the Universe during the 'stringy' phase and
+%
+The cutoff frequency $f_1$, which depends on string related
+parameters, has a typical value of $4.3 \times 10^{10}$\,Hz. 
+
+An upper
+limit on $\Omega_{\rm gw}$ is imposed by the Big Bang
+Nucleosynthesis (BBN) bound down to $10^{-10}$\,Hz, corresponding to the
+horizon size at the time of BBN.
+%Actually, if the total energy amount carried by GWs, $\int \Omega_{\rm gw} d(ln f)$, at the time of
+%nucleosynthesis was larger than $1.1 \times 10^{-5} (N_{\nu} -3)$,
+%where $N_{\nu}$ is the effective relative number of species at the
+%time of BBN, it would have resulted into a particle production rate too
+%large compared to the expansion of the Universe, to account for the primordial
+%abundances of the light elements $^2$H, $^2$He, $^4$He and $^7$Li.
+Measurements of the light element abundances combined with the WMAP
+data gives $N_{\nu}<4.4$ \cite{cyb05}, which translates to $\Omega_{\rm gw} < 1.5
+\times 10^{-5}$. 
+%
+Recent measurements of CMB anisotropy spectrum, galaxy power
+spectrum and of the Lyman-$\alpha$ forest give a bound of similar amplitude
+which extends down to $10^{-15}$\,Hz, corresponding to the horizon size
+at the time of CMB decoupling \cite{smi06}.
+
+\subsubsection{GW background from cosmic string networks}
+\label{box:cosmicstring}
+
+The basic parameter describing a cosmic string netword is the string tension or energy per unit length $G\mu$, determined by the energy scale of the phase transition; in brane inflation this may take values from $10^{-6}$ down to $10^{-11}$. The current limit from CMB and other cosmological probes is a few times $10^{-7}$ \cite{Pogosian:2003mz,Battye:2006pk,Bevis:2007gh}. Fundamental strings also have a ``reconnection probability'' $p$ significantly smaller than unity (the value for field-theoretic strings). 
+
+The properties of both field-theory and fundamental string networks can be summarized by parameters $\alpha <1$ (size of newly-created loops relative to the Hubble horizon) and $\Gamma \sim 50$ (gravitational-wave luminosity of string loops). These are subject to uncertainty from
+%finite size, finite string width or unmodelled effects in
+numerical simulations.
+There are two limits: the ``large loop'' case where $\alpha$ is comparable to unity, for which the ``plateau'' value of $\Omega_{\rm gw}(f)$ may be estimated \cite{Hogan:2006we} as
+\begin{equation}
+	\Omega_{\rm gw}(f) \sim 10^{-8}(G\mu/10^{-9})^{1/2} p^{-1}(0.2\Gamma\alpha)^{1/2}.
+\end{equation}
+% Setting the factors of $p$ and $(0.2\gamma\alpha)$ to unity we obtain the horizontal lines shown in Fig.~\ref{fig:cosmo_stochastic}.
+The ``small loop'' case is motivated if the size of loops is determined by gravitational backreaction, giving $\alpha\simeq \Gamma G\mu \ll 1$;
+% Could cite Caldwell/Battye/Shellard for formula here .. see Battye PGW talk
+deviations from this value \cite{Damour:2004kw} are parameterized by a factor $\epsilon$. In Fig.~\ref{fig:cosmo_stochastic} we use a recent evaluation \cite{Siemens:2006yp} of the GW spectrum for $p=\epsilon=1$. % and different values of $G\mu$. 
+
+Self-ordering dynamics of a scalar field may also result in a nearly ``flat'' spectrum \cite{Fenu:2009qf}, similar to that of cosmic strings, with an amplitude at the threshold of detectability for ET for a GUT scale phase transition.
+
+\subsubsection{Stochastic GW from cosmological phase transitions}
+\label{box:phasetrans}
+
+The transition is characterized by the temperature $T_\ast$ at which bubble nucleation occurs and the duration or characteristic timescale $\beta^{-1}$, assumed much shorter than a Hubble time $H_\ast^{-1}$. The present peak frequency and amplitude of GW are estimated as \cite{Kamionkowski:1993fg}
+\begin{eqnarray}
+	f_{\rm peak} &\simeq& (5.2\times 10^{-8}\,{\rm Hz}) \frac{\beta}{H_\ast}\cdot \frac{T_\ast}{1\,{\rm GeV}}
+	\left(\frac{g_\ast}{100}\right)^{1/6}, \nonumber \\
+	\Omega_{\rm gw}(f_{\rm peak})h_{100}^2 &\simeq& (1.1\times 10^{-6}) \kappa
+	\left(\frac{\alpha}{1+\alpha}\right)^2 \left(\frac{v^3}{0.24+v^3}\right) \left(\frac{H_\ast}{\beta}\right)^2
+	\left(\frac{100}{g_\ast}\right)^{1/3},
+\end{eqnarray}
+where $\alpha$ is a measure of the strength of the phase transition, $\kappa$ is an ``efficiency factor'' for conversion of false vacuum energy to kinetic energy, and $v$ is the speed of expansion of the bubbles. In the limit of a strongly first-order transition $\alpha\gg 1$, $v\rightarrow 1$ and $\kappa \rightarrow 1$, while $\beta/H_\ast$ is expected to be of order $10^2$. Turbulent plasma motion leads to similar values.
+
+\subsubsection{GW from reheating after hybrid inflation}
+\label{box:hybridinf}
+
+In hybrid inflation the peak frequency and amplitude of the primordial GW background are estimated respectively as
+\begin{eqnarray}
+	f_{\rm peak} &\simeq& (6\times 10^{10}\,{\rm Hz}) C g \lambda^{1/4}, \nonumber \\
+	\Omega_{\rm gw}(f_{\rm peak})h_{100}^2 &\simeq& (2\times 10^{-6}) \left(\frac{v}{M_{P}}\right)^2 (Cg)^{-2},
+\end{eqnarray}
+for $g^2 \gtrsim \lambda$, where $g$ is the coupling of the ``Higgs'' field to the inflaton, $\lambda$ is its self-coupling and $v$ its expectation value after symmetry-breaking; $C$ is a constant determined by numerical simulation. When $g^2 \ll \lambda$ the relevant formulae are
+\begin{eqnarray}
+	f_{\rm peak} &\simeq& (3\times 10^{10}\,{\rm Hz}) \frac{g}{\sqrt{\lambda}} \lambda^{1/4}, \nonumber \\
+	\Omega_{\rm gw}(f_{\rm peak})h_{100}^2 &\simeq& (8\times 10^{-6}) \left(\frac{v}{M_{P}}\right)^2
+	\frac{\lambda}{g^2}.
+\end{eqnarray}
+In Fig.~\ref{fig:cosmo_stochastic} we plot the spectrum for the parameter values $\lambda = 2g^2 = 10^{-14}$, $v = 3\times 10^{-7}M_{P}$.
+
+\subsection{Computational Challenges}
+A clear understanding of emerging computing technologies is essential to
+the success of any frontier science facility like ET.
+Our goal is to keep track of the developments and to shape and drive
+the technology with our own experiments in this emerging area. The next
+three Sections will discuss some of the key developments in computing that
+are relevant to ET.
+
+
+\subsubsection{Moore's Law}
+\label{sec:MLbox}
+``Moore's Law is a violation of Murphy's Law. Everything gets better and better''~\cite{MooresFrase2}: this is how Gordon Moore
+commented the law, that bears his name, in 2005. Moore's law describes trend in the history of computing
+hardware. The law has been originally thought to describe the number of transistors that can be placed
+inexpensively on an integrated circuit. But now we see that this law can be applied also to the capabilities
+of many digital electronic devices, such as memory capacity, sensors and even the number and size
+of pixels in digital cameras, etc. There are in fact many other laws related to the Moore's one. Other laws
+predict, for example, hard disk storage cost per unit of information, or network capacity, or pixels
+per dollar, and more.
+
+Gordon E. Moore formulated the law by a simple observation. In 1965 he noted that number of components
+in integrated circuits had doubled every two years from the invention of the integrated circuit in 1958. Thus, he predicted that the trend would continue ``for at least ten years''. Years after the law has been
+reformulated to take into account an higher growth, and the final formulation states that integrated circuits
+would double in performance every 18 months. Thus ``Moore's first law'' predicts an exponential rates for the transistor counts in a microprocessor: $P_n = P_0 \times 2^n$, where $P_n$ is the predicted computer processing power in
+future years, $P_0$ is the actual computer processing power, and $n$ the number of years divided by the doubling period, expressed in years. For transistors the doubling factor is 2 (every 2 years), while for processors' speed the doubling factor is 1.5 (every 18 months).
+
+Moore's first law can be viewed just as an observation, but maybe there is even more. Maybe behind
+it there is a more deeper law, a law driving evolution of information and technology, of which the
+Moore's law is just a consequence. But up to now what it is clear is that this law has been
+widely accepted, and is used as a goal for both marketing and engineering departments of 
+semiconductor manufacturers.
+
+
+\subsubsection{20 years of parallelization}
+\label{sec:paralstory}
+Here we report some details about architecture innovation in the last 
+20 years by hardware manufacturers. We underline the implicit and explicit 
+parallelization concept that has been used as a way to get around the 
+problem of limitations in miniaturization and clock speed.
+A scalar processor is the simplest CPU that can be considered. It is capable
+of executing a single instruction per clock cycle and to manipulate one or 
+two data items at a time.  A superscalar processor is, instead, capable 
+of intrinsic parallelism. Each instruction processes one data item, but 
+multiple instructions and data are processed concurrently, having 
+multiple redundant functional units within each CPU. In fact, modern 
+superscalar processors includes multiple ALUs, multiple FPUs. 
+Thus the dispatcher of the CPU reads instructions from memory and decides 
+which ones can be run in parallel. 
+
+An important step forward has been the introduction (around 1998/1999)  
+of one or more {\em SIMD} units by AMD and Intel. These units are 
+used through the AMD's 3DNow and the Intel's Streaming SIMD Extensions 
+(SSE) instruction set extension  to perform
+basic vector operations (i.e.\ adding two vectors of float, in one step).
+The capability of executing more than one instruction per clock cycle 
+is another level of parallelism introduced into superscalar CPU. The 
+basic idea is to split each instruction into several micro-instructions, 
+each executed by an indipendent functional unit of the pipeline.
+This approach permits a natural parallelism. In fact, usually  when there are
+several instructions to be executed, as soon as the first functional unit
+has finished the execution of the first micro-instruction, this is sent to
+the second unit. So the first functional unit of the pipeline is free 
+to start the execution of the second instruction, and so on.
+Given a starting latency to fill the pipeline, the CPU can reach a 
+steady state where $N$ instructions are executed together for 
+each clock cycle, where $N$ is number of functional units 
+(so called depth of the pipeline).
+
+Another step in improving the efficiency of CPUs, has been the 
+introduction of {\em Simultaneous multithreading (SMT)}, roughly about 
+2003-2004. Maybe one of the most famous implementation of 
+this technique is the Intel's Hyper-Threading Technology. The HT, 
+or HTT, works duplicating some sections of the processor pipeline. 
+In this way the hyper-threading processor appears as two ``logical" 
+processors to the host operating system. This allows the operating 
+system to schedule two threads or processes simultaneously.
+
+Starting from 2005, multi-core CPUs have been introduced in the 
+everyday computing architecture, both in the embedded and standard 
+systems. This solution implements multiprocessing in a single physical 
+package, namely the full processor, replicating the whole computing 
+core. Different cores may or not share caches, and may implement 
+message passing or shared-memory inter-core communication. The 
+actual multi-core CPU implements up to four/six cores per package. 
+In case of the multi-core CPU the performance gain is strictly 
+related to the efficiency of the parallelized software. This is
+called Amdahl's law\cite{Amdahl}, it connects the parallelization
+efficiency with the fraction of the software that can be parallelized 
+to run on multiple cores simultaneously.
+
+\subsubsection{Manycore architectures}
+\label{sec:manycore}
+The transition to many-cores systems seems to be the natural evolution 
+of computational architecture. Many-core processors have a larger 
+number of cores respect to traditional multi-processors, roughly in 
+the range of several tens of cores. The actual state-of-the-art 
+in many-core architecture is represented by GPU processors, where in
+a single package hundreds of computing cores are implemented.
+Here we would like to discuss decisions of major vendors of technology and
+their roadmaps, in order to show the trend in many-core architectures.
+
+All major CPU processors manufactures, such as Intel and AMD, are 
+researching and developing new innovative solutions in
+order to  bypass the even more stringent technological challenges.
+In some sense GPU  are the precursor of many-core architecture 
+with several already marketed and used hardware devices. Even if 
+these have been developed specifically for computer graphics this 
+hardware is now widely used in other computing fields, proving a 
+resounding success.  Moreover, during 2010, Intel and AMD have 
+published and made official communication about subsequent CPU
+generation. They report technological solutions that are following 
+the path of increasing the number of computing core elements per CPU.
+In detail, AMD has declared to be close to releasing a new processors 
+family  based on Fusion~\cite{amdfusion}. AMD Fusion is the
+codename for next-generation microprocessor design and a product 
+merging together AMD and ATI. Where AMD brings knowledge about 
+CPU technology and ATI its own knowledge about Graphic Progessing 
+Units, combining general processor execution as well as 3D geometry 
+processing and other functions of modern GPUs into a single package. 
+
+The core of this new architecture are the APU (Accelerated Processing Units).
+This technology is expected to debut in the first half of 2011.
+Intel has recently declared during the New Orleans Supercomputing 
+Conference its approach to the High Performance Computing,
+introducing the MIC (Many Integrated Core) solution~\cite{intelmic}, 
+known with the name Knights Ferry. The Intel MIC architecture is 
+derived from several Intel projects, including ``Larrabee"~\cite{larrabee} 
+and such Intel Labs research projects as the Single-chip Cloud 
+Computer~\cite{intelscc,intelsccp}.  The architecture is based on 
+chip containing 32 cores x86 at 22nm. Moreover, Intel has declared 
+for 2012 the production of an higher solution based on 50 core 
+4 hyper-threading processor. One of the key point of the Intel 
+solution is the code portability, being a x86 compatible architecture. 
+Comparing Knights Ferry  with GPU solution we have to remark that 
+a CPU core is much more complex than a GPU core, providing for 
+example SSE4, permitting 8 single precision operations per cycle 
+per core. There are also other experiences in the market, such 
+as Tilera products~\cite{Tilera}.  
+
+The previous  statements indicate a clear direction about new 
+processor products: {\em CPUs are evolving toward the direction 
+of the many-core computing}. Each vendor is traducing this concept 
+in different shapes (i.e.\ ``homogeneous collections of 
+general-purpose cores'' rather than ``computers using a variety 
+of specialty cores''), but all agree on the need of increase 
+significantly the parallelization level~\cite{intelterascale}.
+
+A deep change in hardware architecture will also require a deep 
+change in software and algorithms. Without this effort it is 
+impossible to extract the real power of these new computing 
+resources.
+
+\subsubsection{Emerging technologies for distributed computing}
+\label{sec:gridcloudcomp}
+One of the most famous
+definitions of the grid perfectly describes such design: ``the grid is a
+flexible, secure, coordinated resource sharing among dynamic collections
+of individuals, institutions, and resources --- what we refer to as
+virtual organizations"~\cite{anatomy_grid}. 
+More precisely, the grid can be thought as a distributed system, where 
+heterogeneous resources are geographically dispersed and connected by a network.
+
+So grids represent a form of distributed computing facilities, where a 
+``super virtual computer" is composed by many interconnected computing resources,
+like clusters, single workstations and traditional single super-computers.
+The middleware (i.e.\ a collection of software libraries), like the 
+operating system in a pc, gives to the user all
+the necessary instruments to use the grid in a transparent and secure
+way; it provides uniformity through a standard set of interfaces to the
+underlying resources. It is a layer of software between the network and
+the applications that provide services such as identification,
+authentication, authorization, directories, and security. 
+
+A working example of what we briefly described is the Worldwide LHC 
+Computing Grid project (WLCG)~\cite{lcgwebsite},
+currently operates the world's largest scientific Grid, with over 
+140 computing centers in 34 countries contributing
+resources, including more than 10,000 CPUs and several Petabytes of storage. 
+Cloud computing goes a step further in the direction of separating the 
+user from the computing resources. This new computing paradigm represents 
+also an improvement in the direction of the on-demand resource provisioning. 
+Cloud computing generally means a collection of technologies 
+enabling the final user to benefit of wide set of hardware and 
+software remotely distributed.
+
+We can compare the Cloud with the electric power
+network: when we switch on a light, or we plug in an
+electrical device into a wall socket, we are not aware from where the
+power comes from, and generally we do not care much about such details.
+Now we are thinking about a world in which computer power, storage 
+and software capabilities, are as easily accessible as the electric power. 
+
+We can briefly summarize Cloud computing architecture as follows: 
+The end user simply uses a specific service provided by a customer administrator.
+The administrator uses some interfaces to select a specific service 
+(i.e.\ a virtual server or just some storage) and to administer the 
+service (i.e.\ configure it, activate or deactivate 
+the service, or maybe to ask for more computing power or storage). 
+The service provider is the one that physically owns the real server, and 
+the one who is in charge of providing transparent interface to manage 
+the resources.
+
+There are up to now several examples of working cloud infrastructures : 
+Amazon Elastic Compute Cloud (EC2) (that allows users to rent and use 
+virtual server for the scalable deployment of applications), Amazon S3 
+(Simple Storage Service, an online storage web service), Google App Engine 
+(it is a platform for developing and hosting web applications
+in Google-managed data centers).
+

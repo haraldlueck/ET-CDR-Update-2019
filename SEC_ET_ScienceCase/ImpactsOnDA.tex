@@ -1,0 +1,157 @@
+\subsubsection{Impacts on data analysis}
+
+A direct implementation of a matched filter search for coalescing binaries
+would be obsolete when the number of searched parameters is greater than four, 
+even if we assume that Moore's law will continue to be valid until the ET era.
+The fact that a great many number of templates are required for
+a matched filter search would make such a search impossible 
+(see  Table-\ref{comp.power}).  This means that we have to evolve other data 
+analysis methods including sampling techniques, hierarchical methods,
+etc.  A promising outcome could be the adaptation of the algorithms developed 
+for the analysis of data from the future space detector LISA, such as MCMC, MHMC or 
+Genetic Algorithms (GA) (see Box \ref{GAbox}).
+
+For low SNRs, a hierarchical method could be used to recover 
+parameters. Such a search could be implemented by first working with
+a coarse grid and in the second pass working with a finer grid that
+filters the data around candidate events from the first pass. However, this could be 
+problematic if we have relatively large SNRs (as expected in ET). Many 
+templates could have approximatively same maximum values of the likelihood even 
+with disparate configuration of parameters.
+This implies the use of large parameter space intervals for the second step 
+and/or the use of a multi-templates search technique (overlap of many sources). 
+In both cases a huge number of templates and computational power is then 
+needed. 
+
+Another possible approach can be a two-step  multi-band analysis. In this case 
+the analysis is made first by performing a detection phase with templates starting 
+from higher cut-off frequency and assuming a small SNR-lost, e.g.\ of about 
+$5\%$. In fact the template length is reduced exponentially starting from 
+highest frequency. Starting for example from 10\,Hz we loose few percent in 
+terms of signal-to-noise but we gain proportionally in terms of computing time. 
+Thus, the first step can be considered similarly to a trigger zero, used for 
+candidates selection. Then, in the second step, the whole template  is analyzed 
+ for parameters reconstruction and observation, using a finer template bank 
+grid. Another possible optimization could be achieved using the {\em stationary 
+phase approximation} for template production of the first step  and then the PN 
+approximation or the exact waveform from numerical relativity, during the 
+second step. 
+ 
+%%%%%%%%%% Box GAbox
+\etbox{r}{GAbox}
+{Genetic Algorithms}
+{The genetic algorithm (GA) is a search technique that mimics the process of 
+natural evolution based on 
+the positive mutation principle~\cite{PETITEAU2010}.
+\\[5pt]
+Initially, a group of organisms (templates) is chosen, each organism is 
+characterized by a different 
+set of genes (parameters). Then, the quality (log of the likelihood) of each 
+organism is evaluated. 
+Based on the value of their quality (templates with higher likelihood), a set 
+of pairs (parents) are 
+selected and their genotypes are combined to produce  children (new templates). 
+In the last step, one 
+could, with a controlled probability, allow random mutations in the children's 
+genes (by randomly 
+changing the parameters of the new template to explore a large area of the 
+parameter space). 
+The new children will form the new parent and the procedure is repeated until 
+one reaches a steady state (maximum in the log likelihood).
+\\[5pt]
+In the case of coalescing binaries, one should be able to recover the 
+values of the coalescence time and the chirp mass in 1 hour with 1 CPU. 
+For the other parameters, except the direction of the spins, 10 hours would 
+be needed with 100 CPUs.  Recovering all the parameters will need a few days 
+of 100 CPUs.
+\\[5pt]
+The cost is purely dominated by the computation (time domain generation
+plus FFT) of the templates (1 to 2 sec with 1 CPU for a waveform lasting 
+2 years).
+}
+%%%%%%%%%%% end Box GAbox
+
+For stochastic gravitational wave background, it was shown that the available 
+computational power used by the existing search techniques is already enough. 
+Nevertheless further optimizations could be achieved either by 
+parallelization\footnote{One can reduce the computational time by 
+splitting the data from each 
+detector pair into `jobs' which contain several segments (anything up to a few 
+hundred segments).  Then one can run the cross-correlation estimation for all the 
+segments in one job on a single node, and run all these jobs at the same time on
+several nodes.  So, the analysis, which would take about ten days of CPU time, will usually 
+complete within a few hours using  the Atlas cluster, for example.} or, as this type 
+of analysis is limited due to data IO from/to storage, a faster analysis could 
+be performed by realizing high throughput NAS (Network Attached Storage), 
+which gives a faster data access.
+
+
+CW search is computationally expensive.  Even considering a foreseen factor of 
+200 in the  performance of the  fastest supercomputers ca. 2010,
+$2.5 \times 10^6 $ GFlops, in 2023 the fastest super computer is capable of $5.0 
+\times 10^8 $ GFlops. 
+Thus, only the fastest supercomputer in the world will be able to achieve the 
+power computing needs reported in the previous section.
+We can conclude that with the current type of analysis and knowledge the
+task will actually not be achievable yet. Nevertheless, the great theoretical 
+and observational  efforts which are made to understand 
+these sources would  probably make such searches feasible in the near future by 
+narrowing down the uncertainty in the source parameters.
+
+Finally, the burst search should not pose any serious challenges.
+By about 2023, one could expect a gain factor of 200 in computing
+speed.  Implementing many-core technology, we can consider a conservative 
+gain of a factor of 6.  The full parameter search will be roughly 10 times far 
+from the real-time analysis using a CPU model, while trying a many-core 
+implementation, few hours of data will be analyzed in one hour. Thus by about  
+2014 the real-time analysis of the full parameter space search should 
+be feasible.  
+
+\FloatBarrier
+\subsubsection{Conclusions}
+
+%-- Observation Feedback on Theory
+%-- open to new algotithms possibility
+%-- Finally we would like to stress again that: to properly exploit the full 
+%power of the new incoming computing
+%   architecture, a great effort on the software side is strictly needed, 
+%regardless of the architecture we will 
+%   use. 
+
+The most plausible computing scenario of the near future is a combination of 
+CPU and GPU technologies, an evolution of most recent AMD's APU or Intel's 
+Knight ferry technologies.  We already showed that it is possible to exploit 
+GPU power in Coalescing Binaries Detection. That means that many-core 
+programming will not be a choice but rather this will be the state-of-the-art 
+in the ET era. This consideration has permitted to add an extra gain factor to the 
+Moore's law expected performances. In general, we can consider a base gain 
+factor of 200 by 2023 due to Moore's law and an extra factor due to
+many-core architechture that can fluctuate depending on the analysis, but 
+can be posed conservatively  to be 10.  This means a potential gain of more 
+than 3 orders of magnitudes.
+
+Given the computing power forecast, we believe that, if we discard a flat 
+search approach with more than 4 parameters and the  search for CW with great 
+number of spin-down parameters (where more sophisticated improvements should be 
+done), the combination of  existing search methods and the future improvement 
+of computing resources will allow  ET to fully  take advantage of its 
+technological design and to play its real role as an observatory giving the 
+scientific community the expected information to explore the universe with new 
+eyes.
+
+We should also mention emerging technologies for distributed computing, such 
+as Grid and Cloud computing facilities. Here the Seti@Home, Einstein@Home and LHC@Home
+experiments are great examples. These will follow the evolutionary trend and 
+will provide important CPU power containers for off-line analysis.
+
+We would like to conclude remarking that, technological breakthroughs are 
+taking place. The computing infrastructure trend is toward many-core solutions, 
+as shown by Top500 and manufacturers' road-maps. The possibility to address 
+future computing power for ET science needs will be proportional on how we will 
+be able to use these new architectures. The doubling of performances each 18 
+months is no more for free. A change on programming paradigm and coding will be 
+mandatory.
+
+
+\FloatBarrier
+%Digital Enterprise Group (DEG)
