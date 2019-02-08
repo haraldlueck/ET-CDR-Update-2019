@@ -1,0 +1,191 @@
+
+%\documentclass[color,cite,epsfig,12pt]{article}
+%\usepackage{graphicx}
+
+%\begin{document}
+
+
+\FloatBarrier
+\subsection{Description}
+%
+% put here the description of the content of the section
+%
+%\emph{
+%Responsible:  WP2 coordinator, F.\ Ricci\\
+%}
+
+The suspension system of a gravitational wave detector is conceived to isolate the test
+masses from ground seismic vibrations and local disturbances so that they are considered 
+nearly in a free fall state in the frequency bandwidth of interest. 
+A typical suspension chain is obtained cascading a set of passive mechanical filters
+providing a suited attenuation from seismic and acoustic noise above a certain cut-off
+frequency. Below this frequency value an active feed-back control strategy is developed 
+by using sensors and actuators disseminated along the suspension chain and keeping the 
+interferometer at its working point.
+  
+The upper part of the suspension chain, called \emph{Superattenuator} (SA), is essentially a 
+N-stage pendulum supported by a three-leg elastic structure, called Inverted Pendulum (IP). 
+In an N-stage pendulum the horizontal displacement of the suspension point, at a frequency 
+$f$ much higher than its normal modes $(f_1, f_2, ........, f_N)$, is transmitted to the 
+last stage with an attenuation proportional to $f^{-2N}$.
+In order to attenuate the vertical vibrations, each mass of the multi-stage pendulum is 
+replaced by a cylindrical mechanical filter with a set of concentric cantilever blade 
+springs with low stiffness. The blades support, through a long metallic wire, the next 
+mechanical filter, forming a chain of low frequency oscillators also in the vertical direction. 
+In Virgo the blades work in parallel with a magnetic anti-spring system, assembled 
+on each filter and designed to reduce its vertical mode from about 1.5 Hz down to 0.5 Hz. 
+Thanks to the anti-springs the vertical modes of the chain are all below 3 Hz. 
+Starting from a few Hz, the mirror is thus well isolated from vertical seismic noise too. 
+ 
+The last suspension stage (LSS), called {\it {optical  payload} } or simply 
+{\it {payload}}, is the system designed to couple the test mass to the SA chain, 
+to compensate the residual seismic noise and to steer the mirror through internal 
+forces exerted from the last SA element. The main components of a Virgo-like LSS are: 
+the Marionette, the Recoil Mass (RM) and the Mirror. The marionette is the first 
+stage used to control the mirror position by means of coil-magnet actuators acting 
+between the last stage upper part suspension and the marionette arms, while the recoil 
+mass is used to protect and to steer the mirror. On its mechanical structure, indeed, 
+the coils of the electro-magnetic actuators acting on the mirror back side are mounted.
+
+\noindent
+LSS plays also another important role: all the mechanical elements which are connected 
+to the mirror are designed not to degrade the intrinsic mechanical losses of the 
+mirror itself. This is necessary because of the well known relation between mechanical 
+dissipations and thermal motion in macroscopic systems. The thermal noise contribution 
+is reduced by developing sophisticated suspension systems with materials having low 
+mechanical dissipation and low friction mechanical clamps. However, to achieve  
+the goal sensitivity of the ET Project at low and intermediate frequency, 
+a further reduction of thermal noise contribution is obtained by cooling the mirror 
+and its last stage at cryogenic temperature\cite{ricci_moriond}. Cryogenic operation 
+introduces additional difficulties, but the benefits in thermal noise reduction 
+is also enhanced by the materials selection with improved properties at low 
+temperatures. 
+
+\noindent
+A major challenge for cooling the mirror is to provide an efficient path for heat 
+conduction while still maintaining good thermal noise and mechanical isolation performance. 
+The cooling system needs to provide adequate heat extraction from the test masses, 
+for both steady state operation and for cooling from room temperature in a reasonable 
+time, without adding noise or short-circuiting the mechanical isolation. This constraint 
+has an important impact on the design of a last stage of cryogenic suspension.
+
+In the next sections we analyze in sequence all these aspects and we will try to summarize 
+a perspective solution for each of them presenting also possible alternative approaches. 
+Finally, an overview of the related technologies to be developed is presentsd in section 4.6.
+
+%
+\FloatBarrier
+\FloatBarrier
+\subsection{Executive summary}
+%
+
+We organized the design study of the ET suspension focusing the activity on four main arguments:
+\begin{itemize}
+\item {The upper part of the suspension, the \emph{superattenuator} (SA),  providing 
+the needed seismic and acoustic isolation. This issue is discussed and the solution 
+is presented in the Upper Stage section~\ref{sec:Upper_stages_mechanics}; }
+\item{The last stage (payload), crucial for the defining the thermal noise 
+performances and the mirror control are presented in paragraph~\ref{sec:last_stage};}
+\item{The local control strategy and the related instrumentation, analyzed in 
+sections~\ref{sec:local_control}, \ref{sec:em_actuator}, \ref{sec:electrostatic};}
+\item{An overview of the main technologies to be developed for achieving the ET 
+scientific goal (see sec.~\ref{sec:crystal-production}, \ref{sec:bonding}, 
+\ref{sec:accelerometers}).} 
+\end{itemize} 
+
+We notice that to clarify some of the open problems, several R\&D programs have been 
+carried out with limited resources. In particular, a bigger effort should be done 
+in the domain of the material studies and of the low temperature  sensing devices.  
+Nevertheless we succeed in preparing a reference solution and a set of alternative 
+scenarios for driving the ET technical design. However the solution selection 
+requires intensive experimental activity and the coordination efforts will be  
+significantly effective only if continuous activity in the laboratories is sustained 
+and coordinated in collaboration with the Japanese project LCGT.
+
+The preliminary activity of the ET working group, devoted to the conceptual design 
+of the suspensions, was centered on the definition of ET suspension requirement. 
+In particular we collected and compared the mechanical and thermal properties of 
+the materials at room and low temperature. 
+Both silicon and sapphire potentially offer superior performance at cryogenic temperatures. 
+In particular silicon samples can be obtained in large cylindrical blocks of mass higher 
+than 100 kg. Its attractive thermal and thermo-mechanical properties makes it a strong 
+candidate for the mirror and the suspension fibre in the future detector operating 
+at cryogenic temperatures. 
+
+\medskip
+
+The low and high frequency interferometers ( ET-LF and ET-HF) proposed in the ET 
+design study require different suspension systems. In the following we will show 
+that the SA as it is operating within the Virgo interferometer is already compliant 
+with the HF interferometer requirements. On the other hand for  ET-LF a dedicated 
+effort is required. In fact, to extend the detection bandwidth of the Einstein 
+Telescope in the low-frequency region starting from a couple of Hz, a better seismic 
+attenuation in the ultra-low frequency range is needed. 
+The \emph{Superattenuator} dynamics in the low frequency range, where the inner 
+normal modes of the mechanical filter chain are confined, has been simulated by 
+using the electro-magnetic equivalent circuit and a detailed simulation campaign 
+devoted to this design study has been performed. On this base we concluded that 
+we can fix to six the number of filters because a better attenuation performance 
+in the high frequency range is not necessary anymore since the safety margin is 
+large enough in Advanced Virgo and even larger in an underground environment. 
+Then, a SA 17-m high with six magnetic anti-spring filters ("equal-spaced" 
+configuration) tuned with a vertical cut-off frequency around 300\,mHz, represents 
+the reference solution for  ET-LF interferometer. 
+
+\medskip
+
+As we anticipated above, the last stage of the suspension system is crucial in defining 
+the suspension thermal noise performances. In particular for the  ET-LF case we deal 
+with a system of coupled oscillators with masses at different temperature. For this reason, 
+the thermal noise evaluation required to develop a specific model,where
+the interacting masses are at different  temperature in steady state condition. 
+The study of the thermal noise 
+of this system has been carried on by using two different methods and the suspension 
+thermal noise curves have been compared with the ET-D goal sensitivity curve driving 
+the design of the last stage of the mirror suspension. 
+
+Thus, the conceptual design of the payload for LF and  ET-HF has been completed. 
+It includes for  ET-LF the analysis of the heat flow, the definition of the fibre 
+material and geometry and the heat path from the mirror to the cold box via the 
+marionette trough the suspension fibres and the dedicated heat sinks.
+
+\medskip
+
+The  ET-LF payload will be installed in the lower part of the vacuum tower hosting 
+the 17-m long super-attenuator chain. The vacuum tower basement is a cryostat separated 
+to the upper part by a roof crossed by the Ti-6Al-4V thin rod, which holds the 
+whole payload. The cold box is set on top of a cryo 
+compatible attenuator chain hosted in an ancillary cryostat. The box will keep the mirror at cryogenic temperature: 
+it can be either a simple liquid helium container in the case of a cryoplant based 
+on cryofluids or the cold head of a cryo refrigerator in the case of a cryocooler 
+plant. Both solutions are discussed and compared in more details in the infrastructure 
+section. The final choice will depend on the outcome of a dedicated  R\&D effort.
+
+\medskip
+
+A sophisticated control systems will be implemented in order to hierarchically 
+control test mass positions to bring the interferometer to operation.
+The actuation system is needed to align the interferometer mirrors 
+and to automatically maintain the operation point. It is based on the signals 
+derived from the circulating light  to apply internal forces exerted 
+through the last stages of the suspension. 
+The actuation based on a coil-magnet system for ET is reviewed in details and 
+its limit associated to the $1/f$ potential noise is assessed; the alternative 
+electrostatic approach is also discussed.
+
+\noindent
+For the  coarse mirror control optical conduits and bundle fibre served as position sensors have been tested  at low temperature  \cite{VFC}. They can be used together with short-arm optical levers and small 
+interferometric systems for fine position control to achieve an alignment accuracy within 
+10 nrad RMS. Hence low frequency cryogenic accelerometers have being developed 
+for this purpose.
+
+\medskip
+
+Finally, it should be underlined that the complex study on the ET suspension system 
+is not limited to a definition of a reference solution. Some crucial technologies 
+to be developed in the domain of the slicon fibre and cryo-device construction have
+been identified. These are issues of potential interest for industrial world too.
+
+
+ 
+% \end{document}>>>>>>> .r616
