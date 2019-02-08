@@ -1,0 +1,474 @@
+\FloatBarrier
+\subsection{Computing Challenges}
+
+This section deals with the feasibility of the search for GW sources in ET from the 
+computational power point of view. A brief description of examples of existing search 
+methods and parameter estimation tools for different sources is given.
+For these methods, we provide a preliminary estimation of the computational 
+power needed, which could be used in scaling the requirement for other search techniques.
+We also evaluate the impact of computing technologies available over the next decade
+on ET data analysis.
+
+\subsubsection{Detection Strategies}
+Computational resources required to search for gravitational waves depend,
+quite strongly, on the type of source that is being searched for and the
+data analysis technique is used. In this Section we will take a look at the
+search strategies that are currently being pursued for various sources.
+
+%%%%%%%%%%%%% CBC
+
+\paragraph{Compact Binary Coalescence}  
+
+A search for well-modelled sources whose phase evolution is accurately known,
+an example of which is the coalescence of compact binaries,
+is generally performed using matched filtering. 
+As the modelled waveforms depend on a number of parameters, the most optimal 
+way to search for the signal is to filter the data through a bank of templates 
+covering the astrophysically interesting region of the parameter 
+space~\cite{Sathyaprakash:1991mt,BSD2,owen97,Owen:1998dk,BABAK2006}. 
+Matched filtering technique essentially obtains the maximal value of the 
+SNR corresponding to the template that best matches the signal buried in the data.
+It represents a grid of theoretical waveforms (templates) placed on the space 
+of parameters, each point on the grid being associated with a specific set
+of parameters. The density of templates is chosen so that one 
+loses no more than a tiny fraction of signals as a result of working with a 
+discrete grid.  
+
+The number of templates required to search for coalescing binaries 
+grows as a strong power of the lower frequency cutoff. Thus, matched
+filtering could be computationally prohibitive in ET since ET aims to
+push the low frequency sensitivity down to 1 Hz compared to 10-20 Hz 
+in advanced detectors. As shown in Box \ref{TemplBankbox}, the 
+number of template for an ET-D configuration ranges from $10^9,$ for 
+binaries with non-spinning stars, to $10^{18},$ when the binary is composed
+of spinning stars but with the spins aligned with the orbital angular momentum.
+
+In Table \ref{comp.power}, we summarize the computational time needed for 
+the cases defined in box \ref{TemplBankbox}, using matched filtering
+technique\footnote{Low cost system in the last column of the Table 
+represents computing power features of the smallest top500 system in 
+a couple of years, Figure~\ref{fig:top500}. Within ten years, it is  
+plausible to expect that such a computing capability will be available 
+at an affordable cost}.
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c||c|c|c|c|c|} 
+\hline
+
+\multicolumn{2}{|c||}{Computers} &  GPU C2050 & E@H & WLCG &  Tianhe-1A & Low cost system\\ 
+\hline
+\multicolumn{2}{|c||}{Processing power (TFlops DP) } & 0.25 & 200 & 2000 &  2567 & 100 \\ 
+\hline
+ Nbr of para  & Nbr of templ   &  \multicolumn{5}{|c|}{Computational time needed} \\
+ \hline
+  2   &  $10^9$       & 128 days & 4 hrs  & 24 min   &  18 min  & 7 hrs   \\
+ \hline
+  4   &  $10^{13}$  & 3,520 yrs & 5 yrs   & 182 days   &  128 days    &  9 yrs  \\ 
+\hline
+   6  &  $10^{18}$  & $358~10^6$ yrs &   $5~10^5$ yrs & $5~10^4$ yrs   & $4~10^4$ yrs  &  $9~10^5$ yrs   \\
+\hline
+\end{tabular}
+\end{center}
+\caption{This table gives the computational time needed for a search 
+with different number of parameters using 1 GPU C2050 \ref{sec:manycore}, 
+E@H, WLCG\ref{sec:gridcloudcomp}, the supercomputer Tianhe-1A 
+box \ref{Tianhe1Abox} and using the performance of the smallest system 
+in the Top500 list in a couple of years, respectively. The results show 
+that using a matched filtering search with a template bank of six or more 
+parameters is not feasible.}
+\label{comp.power}
+\end{table}
+
+
+%%%%%%%%%% Box TemplBank
+\etbox{r}{TemplBankbox}{Template bank}
+{
+For an ET-D configuration, we computed the number of templates for three 
+different intrinsic configurations of a binary system: 
+(i) binaries with non-spinning stars treating the two components masses
+as search parameters, (ii) the same as in case (i) but including 
+sky location angles of the binary, and (iii) binaries with spinning components 
+where in addition to the four parameters in case (ii) the 
+spin magnitudes were treated  as free parameters.
+\\[5pt]
+In each case, time and phase at coalescence, polarization and inclination 
+angles were also treated as free parameters but they do not add significantly
+to the computational burden. An optimization over these parameters 
+was perfomed using several techniques: analytically for the coalescence phase at 
+coalescence, numerically for the inclination angle, and by a projection of the metric 
+over the time at coalescence and the polarization angle, respectively.
+We chose the grid so that
+\\[5pt]
+\begin{itemize}
+\item the loss in the number of events at threshold is no more than 12.5\%,
+\item it covered the range of total mass $1$-$300$ $M_\odot$, 
+\item covered the whole sky search in cases (ii) and (iii), and
+\item the (dimensionless) spin magnitudes were in the range $\in [-1~1]$. 
+\end{itemize} 
+The numbers of templates required for the three cases are $10^9$, $10^{13}$ and 
+$10^{18}$ respectively. 
+}
+%%%%%%%%%%% end Box TemplBank
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end CBC
+
+%%%%%%%%%%%%%%SGB
+
+
+\paragraph{Stochastic Gravitational-Wave Backgrounds}  
+Stochastic gravitational waves result from a superposition of 
+a large number of waves. It will not be possible to distinguish
+each wave separately. The superposition of many different waves 
+forms a background, whose spectrum and spectral power could contain
+the signature of their origin and the physics behind their 
+production. Stochastic backgrounds could be of cosmological 
+(isotropic distribution, like the cosmic microwave background) 
+or of astrophysical nature (anisotropic distribution following 
+the spatial distribution of the sources, which becomes isotropic
+if the sources are cosmological in origin). The search method 
+should depend on the angular distribution sources and their 
+properties\cite{THRANE2009}. 
+
+The search for isotropic sources, called {\em isotropic analysis}, 
+is based on the use of a network of detectors \cite{ISOTROPIC1, 
+ISOTROPIC2}. An alternative is the so-called {\em radiometer
+search} \cite{RADIOMETER}. 
+In an isotropic search, the bulk of the processing time is taken up 
+by reading and writing the data and finding the frequency dependent 
+cross-correlation spectrum and sensitivity. It is done by splitting 
+the output data from several interferometer pairs into 
+short segments (typically 60 seconds long), separately
+cross-correlating  pairs of segments, and summing the partial 
+results at the end.  
+
+%From the nature of the detection algorithm one can estimate 
+%the computational cost incurred in ET. 
+%Typical cross correlation analysis is made in the frequency 
+%band 600 Hz to $10$~kHz, with 0.25 Hz of frequency resolution. This 
+%implies the use of a sampling frequency of 20 kHz and
+%segments of duration, at least, $4\,\rm s$.  Thus, 
+%typical data vector length is equal to $L = 4\, {\rm s}\,\times 20,000
+%{\,\rm Hz} = 80,000$ samples. In one day of data, one expects 
+%to perform $21,600$ analysis cycles. This should be multiplied
+%by the number of cross correlated channel pairs.  Thus, the total 
+%amount of processed data (assuming single precission) is
+%$N=21,600 \times 8 \times 80,000 = 28\,\rm GB $ for a
+%pair of channels.
+%
+%We can estimate the computational power required considering 
+%costs coming mainly due to the Fast Fourier Transform (FFT)
+%--- the main work horse in cross correlation: this is 
+%$N_c\times N\,\log_2N,$ where $N$ is the number of samples in each
+%FFT operation and $N_c\sim 30$ is the number of channel pairs.
+%Considering \texttt{fftw} \cite{FFTW} as FFT reference library, 
+%this algorithm costs roughly 6 GFlops for a vector data of 80,000 
+%samples. From this we can conclude that for 1 day of data we 
+%need 1 h of CPU time, thus the estimated IO throughout is about 
+%10MB/s for a pair of  channels.
+%Now in order to understand if this is a CPU or IO bounded 
+%problem we can test the two hypotheses. 
+%Under the hypothesis of a CPU bounded problem,  we know 
+%from the previous evaluation made using real information 
+%that now we achieve 1MFlops x pairs channels. This data 
+%is 3 order of magnitude smaller than real one.
+%
+Usually the number of cross correlated channels is of the 
+order of some tens, from which it is clear that this kind of 
+analysis is characterized by limitation due to 
+data Input/Output from/to storage; the CPU power 
+seems to be already enough to process data in real-time.
+
+{\em The sky decomposition method} is used for anisotropic 
+background, the method provides maximum likelihood estimates 
+of the gravitational wave distribution decomposed with 
+respect to some set of basis functions on the sky. This 
+basis could be pixel basis or spherical harmonic basis 
+defined with respect to the Earth's rotational axis.
+
+For point sources, the best choice is the pixel basis. 
+However, for a diffuse background dominated by dipolar 
+or quadripolar distributions, the best choice is the 
+use of spherical harmonic basis. 
+
+The spherical harmonic analysis method can successfully 
+recover simulated signals injected into simulated noise 
+for several different types of stochastic gravitational 
+wave backgrounds, for example, isotropic sources, dipole 
+sources, point sources, diffuse sources, etc. Moreover,  
+applying the spherical harmonic decomposition   in the 
+case of an isotropic signal, where only the monopole 
+moment contributes to the stochastic gravitational wave 
+background,  allows one to save in 
+computational power and time, compared with the isotropic 
+search method \cite{THRANE2009}.
+
+However, in general,  this method is more computationally 
+intensive than isotropic and radiometer methods.  The 
+computation time will be proportional to some function 
+of the maximum value $l_\text{max}$ of the modes, but 
+roughly estimates show that the spherical harmonic search 
+needs 10 times more CPU time than the isotropic/radiometer 
+searches.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%end SGB
+
+%%%%%%%%%%%%% CW
+
+\paragraph{Continuous Waves sources} 
+Continuous waves (CW) are signals with duration longer than 
+the typical observation time of a detector. Rapidly spinning 
+non-axisymmetric neutron stars are prime examples of sources 
+that could emit CW over millions of years. The phase of the
+signal from these sources could be affected by various processes such
+as intrinsic spin-down, Doppler modulation (in phase and amplitude)
+due to relative motion of the source and the detector,  
+glitches in frequency caused by internal quakes and pulsar
+timing noise.  
+
+The choice of a search method for CW depends closely on the 
+prior information we have on the signal that we are searching 
+for and on the available computing power. We can distinguish 
+between two cases: 
+\begin{itemize}
+\item Targeted search: knowledge about the source parameters 
+(position, frequency, spin-down) are available from 
+electromagnetic observations of the source.
+\item Blind search: all the source parameters are given 
+within large intervals based on the lack of available 
+theoretical understanding of the astrophysical scenarios. 
+\end{itemize}
+%
+The targeted search could be implemented as follows:  
+(1)~one extracts the band of interest around the 
+emission frequency\footnote{The received GW signal is not
+monochromatic but covers a small frequency band (fraction 
+of a Hz) around twice the electromagnetic frequency, due to 
+Doppler modulation and intrinsic spin-down of the pulsar.},   
+(2)~corrects Doppler and spin-down 
+effects\footnote{If the spin-down parameters of a source 
+are known with a high accuracy,  we can remove both the 
+Doppler and spin-down by multiplying the data by an appropriate 
+function.}, (3)~applies matched filtering\footnote{Apply 
+matched filter of the slowly varying 
+demodulated signal over the unknown nuisance parameters 
+(amplitude of signal as received on Earth, polarization 
+and inclination angles, initial phase, etc.) and over the 
+uncertainty range of the known parameters (position angles, 
+frequency, spin-down).  An alternative to explicitly 
+applying a matched filter for the nuisance parameters is the 
+use of the so-called F-statistics~\cite{ItohFStatistic}.},  
+(4)~selects the value of the unknown parameters at maximum 
+of the filter output and, finally, (5)~compares it 
+with noise distribution to claim a detection or set an 
+upper limit.  
+
+The computational cost for targeted searches relies on the 
+accurate knowledge of the source parameters: position, 
+frequency and spin-down rate.
+Considering that the frequency is very accurately known 
+within a small bandwidth, one can easily down-sample the 
+data stream around the expected source frequency and the 
+data analysis cost for such sources is, therefore, minimal 
+(few templates)\footnote{In a more general case, even for 
+sources observed in the electromagnetic domain, these 
+parameters are known with finite accuracy. This can lead 
+to a loss of sensitivity, especially for very long 
+observation times or an increase in the computational 
+cost.}. 
+
+However, in the case of neutron stars for which no substantial 
+information about the spin-down parameters are known, the 
+computational cost is far higher. 
+% On the one hand,
+% it is no longer possible to set an upper-limit on the 
+% signal strain,  and  on the other hand,  it is obvious 
+% that, because of the lack of information about the higher 
+% spin-down parameters, one would also have to scan through 
+% their parameter space. 
+The number of templates in this case is esteimated to be 
+in the range  $10^2~ - ~  10^{10}$, for a year's worth of 
+integration \cite{DhurandharCW}. It implies that even if 
+we have to perform the search in a narrow frequency band 
+around twice the radio pulsar frequency, the computational 
+task is really tricky.  It is apparent that we cannot 
+expect the direct use of matched filtering for 
+a blind search to work as it is necessary to consider
+in our search the minimal range for the source 
+parameters: the whole sky for angular position and the  
+whole bandwidth for the signal's frequency\footnote{The 
+computational power is proportional to the maximum observable 
+frequency to the fourth power~\cite{DhurandharCW}}.  
+In the case of a neutron star on a circular orbit in a binary
+system, the computational power required is $10^{17}$ GFlops, 
+far from our actual computational capabilities.
+Alternative approaches with a small loss in sensitivity
+but ensure to significantly reduce the computational 
+power are needed.
+
+One of the solutions is the so-called hierarchical search 
+({\em stack-slide search} \cite{BRADYbis}) where coherent 
+and incoherent steps are alternated. In the incoherent step 
+a rough exploration of the parameter space using short data 
+segments is made, with a low threshold that allows for 
+many false alarms from which some candidates are selected. In the 
+coherent step, each candidate is followed up with a more refined 
+search using longer data segments, but searching the parameter 
+space only in the neighborhood of the candidates from the first step.
+
+Both search steps considered above share the following 
+scheme \cite{BRADY1}: 
+\begin{itemize}
+\item The output data are divided into short segments, called stacks.
+\item Each segment is phase corrected using an appropriate mesh of 
+correction points to confine an alleged signal in one frequency bin.
+\item Fourier transform the phase corrected stacks.
+\item Using finer mesh, the individual power spectras are corrected 
+for residual frequency drift by removing phase modulations over 
+the entire data stream.
+\item Sum the corrected power spectra.
+\item Search for candidates exceeding some fixed thresholds.
+\end{itemize}
+
+From the computational point of view, the interesting feature of 
+stack-slide method is the fact that it considers the available 
+computational power as a parameter which fixes the value of the 
+source's parameters that are searched over. In fact,  before the search 
+begins, one has to specify the size of the parameter space to be 
+searched (choose maximum frequency,  region of the sky, etc.), 
+the available computational power to do the data analysis and an 
+acceptable false alarm probability. From these, one can fix optimal 
+values for the loss in sensitivity and the number and 
+length  of stacks. Optimization consists of maximising the 
+sensitivity function over these parameters given the definition 
+of the total computational power as constraint.
+
+The advantages of a hierarchical search are, on the one hand the 
+low threshold in the first step of the search allows detection 
+of low-amplitude signals which would otherwise be rejected, and 
+on the other hand in the second step one can search using longer data 
+slices with a limited computing budget, because of the reduced 
+parameter space being searched, thus excluding false positives 
+from the first step. For given computational resources, this 
+technique achieves the best sensitivity, if the thresholds and 
+mesh points are optimally chosen between the first and second 
+steps of the search.
+
+Another possible alternative is proposed in 
+Ref.~\cite{Abbott:2005pu} where a hierarchical method was 
+developed, allowing a reduction in the computational costs. 
+This method is sub-optimal and the gain processing costs is paid 
+by a small reduction in sensitivity. This method also consists 
+of alternating coherent steps, based on FFT, and incoherent steps 
+based on the {\em Hough transform}. The Hough transform  is a 
+feature extraction technique used typically  in image analysis, 
+computer vision, and digital image processing. The purpose of 
+the technique is to find imperfect instances of objects 
+within a certain class of shapes by a voting procedure. This 
+voting procedure is carried out in a parameter space, 
+from which object candidates are obtained as local maxima in a 
+so-called accumulator space that is explicitly 
+constructed by the algorithm for computing the Hough transform.
+Analyzing the data in roughly real time requires a computational 
+power of  $10^8$GFlops \cite{CQG:Hough}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%end CW
+
+%%%%%%%%%%%%%%%%%%%%%Bursts
+
+\paragraph{Burst Sources}  
+Transient gravitational waves whose phase evolution is unknown
+fall into the class of unmodelled burst sources.  Core collapse of a 
+white dwarf is an example where theoretical prediction of the emitted
+waveforms, both their amplitude and phase evolution, is highly 
+uncertain.  There are many different methods to search for 
+unmodeled bursts. Coherent Wave Burst (cWB) is a typical example, 
+wherein the basic idea is to coherently combine time-frequency 
+maps from several detectors \cite{KLIMENKO2011}. The sky position 
+of the source is encoded in the time delay between different
+detectors.  In the presence of a gravitational wave signal, 
+the excess power in a time-frequency map would be  similar 
+(modulo the detector antenna pattern) but with a time delay that
+depends on the location of the source on the sky. Thus, one 
+can determine the sky location and the strength of the signal from 
+time delay and the antenna pattern and by doing multiple time 
+shifts of the data corresponding  to different sky positions 
+\footnote{In principle, for this type of search only the sky 
+position and strength of the gravitational wave burst could be 
+recovered. However, the likelihood method used in cWB search 
+offers a convenient framework for the introduction of constraints 
+arising from the source models like the different polarization 
+states of the signals \cite{KLIMENKO2011}.}.
+
+The number of detectors used in cWB does not affect  the 
+computational cost since data from different detectors is
+not analyzed separately, rather only the combined data stream. 
+However, if we do joint analysis with LIGO and Virgo detectors, 
+it only makes sense to use the bandwidth where all detectors are 
+reasonably sensitive\footnote{There is no point in combining the 
+data where the sensitivity is very uneven because the weakest detector 
+in a network limits the sensitivity.}. % At least, we can subdivide 
+% bandwidth into regions with comparable sensitivities and analyze 
+% each separately but for sure this would reduce the bandwidth of ET.
+
+Recent implementation of cWB to process two years data from LIGO's 
+fifth science required one week of processing time on the Atlas cluster,
+whose processing speed is 80 TFlops.
+% \footnote{Atlas is composed of 
+% 1680, 2.4GHz, 64bit quad core CPUs which sums up to 64 TFlops. 132 
+% Tesla graphic cards gives us a theoretical peak performance 
+% of  132 TFlops. The real power processing of Atlas is less 
+% than the half of its peak value.} 
+During the sixth science run,  burst 
+search, using cWB, was run online for H1,L1,V1 producing coherent 
+triggers about 5 minutes behind the real time, doing computation 
+on 1 dedicated computer. 
+
+However, in the ET era there might be such a rate of events 
+that it becomes much more computationally intensive. Also if each 
+event is long duration or wide bandwidth, it might consists of 
+millions of pixels. Processing such huge clusters might be quite 
+computationally intensive, but still feasible with the future 
+computational configurations as it will be shown in the next 
+subsection.
+
+Finally, one can emphasize again that the computational cost 
+for cWB search depends on which detectors are used, what 
+frequency band one wants to explore and based on that it 
+could be possible to estimate how many sky locations could 
+or should be considered.
+But practically, the most important factor is the large false 
+alarm rate that cannot be predicted before the detector 
+is switched on. If a detector is glitchy, it 
+might increase the computational cost a lot, since one would have 
+to process a lot of false positives before rejecting them.
+
+For {\em modeled bursts} like GRBs from both core collapse,  
+supernovae and binary mergers, the search is based on a 
+matched filtering variant, so-called time sliced matched 
+filtering \cite{MAURICE2011}.  The application of matched 
+filtering depends crucially on phase coherence in the true 
+signal, in correlating it to a model template.  To 
+circumvent phase incoherence on long time scales created by 
+turbulence in the inner disk or torus of magneto-hydrodynamical 
+systems powered by a Kerr black hole,   
+the template is sliced  into several segments on intermediate 
+time scales, for which phase-coherence may be sustained.
+
+Matched filtering is then applied using each slice, by 
+correlating each template slice with the detector output 
+using an arbitrary offset  in time.
+The relevant parameters in this algorithm are: a choice of 
+coarse grained coherence time, fine grained time of onset(s) 
+of the slices of the burst and the mass of the black hole. 
+The mass is equivalent, for all practical purposes, to the 
+duration of the burst. Changing the black hole mass changes 
+the duration and also the  strength of the signal, but the 
+latter is automatically absorbed by the algorithm and requires 
+no adjustments \cite{MAURICE2011}.  
+
+For this kind of search, a computational cost can be 
+estimated as follows: for a single black hole mass parameter, it is 
+about 6 hours of CPU time (core 2 duo) per 1 hour of detector 
+data (sampled at 20 kHz). For a range  of black hole parameters 
+with, e.g.\ , 0.1$\%$ partition, a full parameter search 
+amounts to a few thousand  hours per 1 hour of detector data.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%end Bursts
