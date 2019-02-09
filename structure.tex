@@ -1,0 +1,83 @@
+\usepackage{verbatim}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%
+\usepackage{ae}
+\usepackage{lastpage}
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{parskip}
+\usepackage{chapterbib}
+\usepackage{xspace}
+\usepackage[english]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage[sectionbib, numbers, sort&compress, square]{natbib}
+%\documentstyle{elsart-harv}
+\usepackage[pdftex,pagebackref=true,pdfpagelabels=true]{hyperref}
+\input{ET-macros.tex}
+\definecolor{linkcolor}{rgb}{.8,0,0}
+\definecolor{urlcolor}{rgb}{0,0,.7}
+\definecolor{citecolor}{rgb}{0,.5,0}
+\definecolor{acrocolor}{rgb}{0,0,.7}
+\hypersetup{bookmarksopen,colorlinks=true}
+\hypersetup{pdfstartview=FitH}
+\hypersetup{linktocpage=true,bookmarksnumbered=true}
+\hypersetup{plainpages=false,breaklinks=true}
+\hypersetup{linkcolor=linkcolor,citecolor=citecolor,urlcolor=urlcolor}
+%\usepackage{float}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{hhline}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{eurosym}
+\usepackage{rotating}
+\usepackage[absolute]{textpos}
+\usepackage[page,toc]{appendix}
+\usepackage{wrapfig}
+
+
+
+%
+% comment this line to cancel the watermark
+
+%\usepackage{everypage,draftwatermark}
+%\pdfminorversion=6
+%
+% separates the caption from the text and make the caption label bold: 
+%
+\usepackage[hang,small,bf]{caption}
+%
+% user defined commands
+%
+% \citeurl{key} cite the URL of a web site, if this has been inserted in the .bbl file as author of a (electronic) entry
+%
+\newcommand{\citeurl}[1]
+{
+\citeauthor{#1}\@\xspace
+}
+%
+% \citeurlp is like \citeurl, but between parentesis
+%
+\newcommand{\citeurlp}[1]
+{
+(\citeauthor{#1})\@\xspace
+}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bear}{\begin{array}}
+\newcommand{\ear}{\end{array}}
+\newcommand{\dy}{\displaystyle}
+\newcommand{\beg}{\begin{gathered}}
+\newcommand{\eeg}{\end{gathered}}
+%pdf stuff
+\pdfinfo{/Title ET Design Study document
+        /Subject Einstein Telescope
+         /Author (ET Science Team)
+         /Keywords (gravitational wave  Einstein Telescope design study)}
+\pagenumbering{roman}
