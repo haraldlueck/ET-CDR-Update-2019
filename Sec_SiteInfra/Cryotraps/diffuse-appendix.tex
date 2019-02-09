@@ -1,0 +1,42 @@
+On actual engineering surfaces it is reasonable, as a first approximation \cite{sparrow_1965, siegel-howell-3}, to represent the reflectance
+$\rho$ as being divided into diffuse $\delta$ and mirror specular $\mu$
+components:
+\begin{equation}
+\label{eq:reflectivity}
+\rho = \delta + \mu
+\end{equation}
+In addition,
+we assume an opaque gray body, whose radiation
+is emitted diffusely according to Lambert's cosine law
+\cite{siegel-howell-3}. The emitted flux depends on
+the absolute temperature, $T$, of the surface, the surface
+emissivity, $\epsilon$, and the Stefan-Boltzmann constant, $\sigma$, in the
+combination $\epsilon\sigma T^4$. Kirchoff's law states that the same
+surface element will absorb only the fraction $\epsilon$ of the incident
+radiation, while reflecting the fraction $\rho = 1 - \epsilon$, so
+that
+\begin{equation}
+\label{eq:sum}
+\epsilon + \delta + \mu = 1
+\end{equation}
+In the diffuse limit ($\mu =0$, $\rho=\delta$), we let $G$ represent the radiant flux incident on a unit
+surface. Then for a diffusely emitting surface with a
+diffuse reflectance, $\delta$, the radiosity, $J$, given
+by
+\begin{equation}
+\label{eq:radiosity}
+J = \epsilon\sigma T^4 + \delta G
+\end{equation}
+represents the diffusely distributed radiant flux leaving
+a unit surface element \cite{tsai_1986}. 
+The net inward radiative heat flux, $q$, is then given the difference between the irradiation and the radiosity:
+\begin{equation}
+\label{eq:influx}
+q = G - J
+\end{equation}
+Using eq.~\ref{eq:radiosity} and eq.~\ref{eq:influx} we can eliminate J and obtain a general expression for the net inward heat flux into the opaque body based on $G$ and $T$. From eq.~\ref{eq:sum} with $\mu = 0$ we get $\epsilon = 1 -\delta$, thus $q$ is given by:
+\begin{equation}
+\label{eq:qgray}
+q = \epsilon\left( G - \sigma T^4 \right)
+\end{equation}
+Starting from Eq.~\ref{eq:qgray} the contribution to the thermal radiation heat transfer coming from diffuse reflectivity was calculated for the geometry given in Fig.~\ref{fig:vacuum-tube} by a finite-element model.
